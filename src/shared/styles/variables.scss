@@ -1,0 +1,23 @@
+:root {
+  --cl-base-bg: #ffffff;
+  --cl-box-bg: #ffffff;
+  --cl-text: #151413;
+  --cl-border: #e5e4e3;
+  --cl-accent: #ff9aab;
+}
+
+html[theme="light"] {
+  --cl-base-bg: #ffffff;
+  --cl-box-bg: #ffffff;
+  --cl-text: #151413;
+  --cl-border: #e5e4e3;
+  --cl-accent: #ff9aab;
+}
+
+html[theme="dark"] {
+  --cl-base-bg: #151413;
+  --cl-box-bg: #1b1a1a;
+  --cl-text: #ffffff;
+  --cl-border: #2f2e2e;
+  --cl-accent: #ff9aab;
+}
