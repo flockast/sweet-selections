@@ -1,4 +1,4 @@
-# SWEET-SELECTIONS
+# Sweet selections
 
 ## Project Setup
 
