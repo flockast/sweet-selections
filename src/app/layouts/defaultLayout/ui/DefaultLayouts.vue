@@ -41,6 +41,7 @@ import { ContentWrapperBlock } from '@/shared/ui'
 .default-layout__header {
   grid-area: header;
   border-bottom: 1px solid var(--cl-border);
+  transition: border .2s ease-in-out;
 }
 
 .default-layout__main {
@@ -57,5 +58,6 @@ import { ContentWrapperBlock } from '@/shared/ui'
 .default-layout__footer {
   grid-area: footer;
   border-top: 1px solid var(--cl-border);
+  transition: border .2s ease-in-out;
 }
 </style>

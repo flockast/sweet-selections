@@ -4,6 +4,8 @@
   --cl-text: #151413;
   --cl-border: #e5e4e3;
   --cl-accent: #ff9aab;
+  --cl-focus: green;
+  --border-radius: 10px;
 }
 
 html[theme="light"] {
@@ -12,6 +14,7 @@ html[theme="light"] {
   --cl-text: #151413;
   --cl-border: #e5e4e3;
   --cl-accent: #ff9aab;
+  --cl-focus: #424242;
 }
 
 html[theme="dark"] {
@@ -20,4 +23,5 @@ html[theme="dark"] {
   --cl-text: #ffffff;
   --cl-border: #2f2e2e;
   --cl-accent: #ff9aab;
+  --cl-focus: #9c9c9c;
 }

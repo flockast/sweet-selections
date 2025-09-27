@@ -17,4 +17,5 @@ body {
   line-height: 1.2;
   color: var(--cl-text);
   background: var(--cl-base-bg);
+  transition: background .2s ease-in-out;
 }
