@@ -6,17 +6,13 @@
         <div class="selected-ingredients__desc">{{ description }}</div>
       </div>
       <div class="selected-ingredients__content">
-        <template
+        <IngredientItem
           v-for="ingredient in selectedIngredients"
           :key="ingredient.id"
-        >
-          <IngredientItem
-            v-if="ingredient"
-            :item="ingredient"
-            :is-active="true"
-            @click.prevent="handleClick(ingredient)"
-          />
-        </template>
+          :item="ingredient"
+          :is-active="true"
+          @click.prevent="handleClick(ingredient)"
+        />
       </div>
       <div
         v-if="countSelected > 1"
@@ -38,7 +34,9 @@ import IngredientItem from './IngredientItem.vue'
 const ingredients = useIngredients()
 
 const selectedIngredients = computed(() => {
-  return ingredients.state.selectedIds.map((id) => ingredients.getItemById(id))
+  return ingredients.state.selectedIds
+    .map((id) => ingredients.getItemById(id))
+    .filter((item): item is TypeIngredient => item !== undefined)
 })
 
 const countSelected = computed(() => {
