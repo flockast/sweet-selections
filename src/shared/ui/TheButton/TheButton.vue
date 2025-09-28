@@ -20,7 +20,7 @@
   opacity: .9;
 
   &:active {
-    transform: translateY(2px);
+    transform: scale(.95);
   }
 
   &:hover {

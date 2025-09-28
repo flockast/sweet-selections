@@ -4,6 +4,8 @@
     :class="{
       'is-active': isActive
     }"
+    tabindex="0"
+    role="button"
   >
     <div class="ingredient-item__image"></div>
     <div class="ingredient-item__name">{{ item.name }}</div>
@@ -30,11 +32,12 @@ defineProps<TypeProps>()
   gap: 1.5rem;
   cursor: pointer;
   transition: transform .2s ease-in-out, box-shadow .2s ease-in-out;
+  outline: none;
 
   &__image {
     width: 100%;
     aspect-ratio: 1 / 1;
-    background: #333;
+    background: #c2c2c2;
     border-radius: var(--border-radius);
     overflow: hidden;
 
@@ -50,9 +53,12 @@ defineProps<TypeProps>()
     text-align: center;
   }
 
+  &:focus {
+    box-shadow: 0 0 0 2px var(--cl-focus);
+  }
+
   &:active {
     transform: scale(.95);
-    //transform: translateY(4px);
   }
 
   &.is-active {

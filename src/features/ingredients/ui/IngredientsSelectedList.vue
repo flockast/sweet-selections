@@ -1,12 +1,18 @@
 <template>
-  <TheBox height="auto">
+  <TheBox
+    :style="{
+      'height': 'auto',
+      'position': 'sticky',
+      'top': '3rem'
+    }"
+  >
     <div class="selected-ingredients">
       <div class="selected-ingredients__header">
         <div class="selected-ingredients__title">Выбранные ингредиенты</div>
         <div class="selected-ingredients__desc">{{ description }}</div>
       </div>
-      <div class="selected-ingredients__content">
-        <IngredientItem
+      <div class="selected-ingredients__content scroll">
+        <IngredientLineItem
           v-for="ingredient in selectedIngredients"
           :key="ingredient.id"
           :item="ingredient"
@@ -29,7 +35,7 @@ import { computed } from 'vue'
 import { TheBox, TheButton } from '@/shared/ui'
 import { declOfNum } from '@/shared/helpers'
 import { type TypeIngredient, useIngredients} from '@/entities/ingredients'
-import IngredientItem from './IngredientItem.vue'
+import IngredientLineItem from './IngredientLineItem.vue'
 
 const ingredients = useIngredients()
 
@@ -78,7 +84,8 @@ const handleClick = (item: TypeIngredient) => {
   &__content {
     display: grid;
     gap: 1.5rem;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-height: 408px;
+    overflow: auto;
   }
 }
 </style>

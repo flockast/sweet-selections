@@ -11,14 +11,23 @@
           />
         </div>
       </div>
-      <div class="ingredients__content">
-        <IngredientItem
+      <div
+        v-if="filteredIngredients.length"
+        class="ingredients__content"
+      >
+        <IngredientCardItem
           v-for="ingredient in filteredIngredients"
           :key="ingredient.id"
           :item="ingredient"
           :is-active="isActiveItem(ingredient)"
           @click="handleClick(ingredient)"
         />
+      </div>
+      <div
+        v-else
+        class="ingredients__no-data"
+      >
+        Ничего не найдено...
       </div>
     </div>
   </TheBox>
@@ -28,7 +37,7 @@
 import { computed, ref } from 'vue'
 import { TheBox, TheInput } from '@/shared/ui'
 import { type TypeIngredient, useIngredients } from '@/entities/ingredients'
-import IngredientItem from './IngredientItem.vue'
+import IngredientCardItem from './IngredientCardItem.vue'
 
 const filterValue = ref('')
 
@@ -88,6 +97,11 @@ const isActiveItem = (item: TypeIngredient) => {
     display: grid;
     gap: 1.5rem;
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  &__no-data {
+    padding: 3rem;
+    text-align: center;
   }
 }
 </style>
