@@ -1,4 +1,5 @@
 export const ROUTE_NAMES = {
   HOME: 'home',
-  DISHES: 'dishes'
+  DISHES: 'dishes',
+  DISH: 'dish'
 }

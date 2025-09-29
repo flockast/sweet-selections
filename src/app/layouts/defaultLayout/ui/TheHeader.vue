@@ -49,7 +49,7 @@ import { ThemeToggleButton } from '@/features/themeToggle'
           }
 
           &:active {
-            transform: translateY(.1rem);
+            transform: translateY(1px);
           }
         }
       }

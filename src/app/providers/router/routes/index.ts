@@ -17,6 +17,11 @@ export const routes: RouteRecordRaw[] = [
         component: () => import('@/pages/dishes/ui/DishesPage.vue'),
       },
       {
+        path: '/dishes/:id',
+        name: ROUTE_NAMES.DISH,
+        component: () => import('@/pages/dish/ui/DishPage.vue'),
+      },
+      {
         path: '/:pathMatch(.*)*',
         component: () => import('@/pages/error/ui/ErrorPage.vue')
       }

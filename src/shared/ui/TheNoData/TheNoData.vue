@@ -1,6 +1,8 @@
 <template>
   <div class="the-no-data">
-    Ничего не найдено...
+    <slot>
+      Ничего не найдено...
+    </slot>
   </div>
 </template>
 

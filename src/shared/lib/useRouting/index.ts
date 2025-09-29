@@ -17,9 +17,14 @@ export const useRouting = () => {
     await router.push(createRouteLocationRaw(name))
   }
 
+  const get = () => {
+    return route
+  }
+
   return {
     createRouteLocationRaw,
     goTo,
-    currentRouteName: computed(() => route.name as string || '')
+    get,
+    currentRouteName: computed(() => route.name as string || ''),
   }
 }

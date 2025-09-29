@@ -3,11 +3,13 @@
     <div class="dishes-selected">
       <div class="dishes-selected__header">
         <div class="dishes-selected__back">
-          <TheButton
-            @click.prevent="emit('back')"
+          <TheButtonLink
+            :to="{
+              name: ROUTE_NAMES.HOME
+            }"
           >
             <IconArrow direction="prev" />
-          </TheButton>
+          </TheButtonLink>
         </div>
         <div class="dishes-selected__title">Ваши кондитерские творения</div>
       </div>
@@ -29,17 +31,12 @@
 
 <script lang="ts" setup>
 import { computed } from 'vue'
-import { TheBox, TheButton, TheNoData, IconArrow } from '@/shared/ui'
+import { ROUTE_NAMES } from '@/app/providers/router'
+import { TheBox, TheButtonLink, TheNoData, IconArrow } from '@/shared/ui'
 import { type TypeDish, useDishes } from '@/entities/dishes'
 import { useSelectedIngredients } from '@/entities/selectedIngredients'
 import { useIngredients } from '@/entities/ingredients'
 import DishCardItem from './DishCardItem.vue'
-
-type TypeEmits = {
-  (event: 'back'): void
-}
-
-const emit = defineEmits<TypeEmits>()
 
 const dishes = useDishes()
 const ingredients = useIngredients()

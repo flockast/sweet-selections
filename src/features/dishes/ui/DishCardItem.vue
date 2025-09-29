@@ -17,17 +17,23 @@
       >
         + {{ optionals.join(', ') }}
       </div>
-      <TheButton
-        @click.prevent="emit('showRecipe')"
+      <TheButtonLink
+        :to="{
+          name: ROUTE_NAMES.DISH,
+          params: {
+            id: item.id
+          }
+        }"
       >
         Посмотреть рецепт
-      </TheButton>
+      </TheButtonLink>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { TheButton } from '@/shared/ui'
+import { ROUTE_NAMES } from '@/app/providers/router'
+import { TheButtonLink } from '@/shared/ui'
 import { type TypeDish } from '@/entities/dishes'
 
 type TypeProps = {
@@ -35,12 +41,7 @@ type TypeProps = {
   optionals?: string[]
 }
 
-type TypeEmits = {
-  (event: 'showRecipe'): void
-}
-
 defineProps<TypeProps>()
-const emit = defineEmits<TypeEmits>()
 </script>
 
 <style lang="scss" scoped>

@@ -6,6 +6,6 @@ export const withHttpClients = () => {
   const httpClients = useHttpClients()
 
   httpClients.init(HTTP_CLIENT_NAMES.BASE, {
-    baseUrl: config.state.BASE_URL
+    baseUrl: config.state.BASE_API
   })
 }

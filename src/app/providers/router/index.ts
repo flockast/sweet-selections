@@ -8,7 +8,14 @@ export const withRouter = (app: App) => {
 
   const router = createRouter({
     history: createWebHistory(config.state.BASE_URL),
-    routes
+    routes,
+    scrollBehavior() {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve({ top: 0 })
+        }, 200)
+      })
+    }
   })
 
   app.use(router)

@@ -4,23 +4,13 @@
       <IngredientsList />
     </div>
     <div>
-      <IngredientsSelectedList
-        @accept="handleAccept"
-      />
+      <IngredientsSelectedList />
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { ROUTE_NAMES } from '@/app/providers/router'
-import { useRouting } from '@/shared/lib'
 import { IngredientsList, IngredientsSelectedList } from '@/features/ingredients'
-
-const routing = useRouting()
-
-const handleAccept = () => {
-  routing.goTo(ROUTE_NAMES.DISHES)
-}
 </script>
 
 <style lang="scss" scoped>

@@ -1,5 +1,5 @@
 import { reactive, readonly } from 'vue'
-import type { TypeDish } from '../types'
+import { type TypeDish } from '../types'
 import { apiFetchDishes } from '../api'
 
 type TypeState = {
@@ -32,8 +32,13 @@ export const useDishes = () => {
     }
   }
 
+  const getItem = (id: TypeDish['id']) => {
+    return state.list.find((item) => item.id === id)
+  }
+
   return {
     state: readonly(state) as TypeState,
-    fetch
+    fetch,
+    getItem
   }
 }

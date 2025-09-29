@@ -49,16 +49,19 @@ const theme = useTheme()
 </script>
 
 <style lang="scss" scoped>
+.theme-toggle {
+  --theme-toggle__expand--duration: 500ms;
+
+  &:active {
+    transform: translateY(1px);
+  }
+}
 .theme-toggle .theme-toggle__expand {
   fill: var(--toggle-color);
 }
 
 .theme-toggle.theme-toggle--reversed .theme-toggle__expand {
   transform: scale(-1, 1);
-}
-
-.theme-toggle {
-  --theme-toggle__expand--duration: 500ms;
 }
 .theme-toggle__expand g circle, .theme-toggle__expand g path {
   transform-origin: center;

@@ -35,11 +35,13 @@
         v-if="countSelected > 1"
         class="selected-ingredients__footer"
       >
-        <TheButton
-          @click.prevent="emit('accept')"
+        <TheButtonLink
+          :to="{
+            name: ROUTE_NAMES.DISHES
+          }"
         >
           Найти блюда
-        </TheButton>
+        </TheButtonLink>
       </div>
     </div>
   </TheBox>
@@ -47,17 +49,12 @@
 
 <script lang="ts" setup>
 import { computed } from 'vue'
-import { TheBox, TheButton } from '@/shared/ui'
+import { ROUTE_NAMES } from '@/app/providers/router'
+import { TheBox, TheButtonLink } from '@/shared/ui'
 import { declOfNum } from '@/shared/helpers'
 import { type TypeIngredient, useIngredients} from '@/entities/ingredients'
 import { useSelectedIngredients } from '@/entities/selectedIngredients'
 import IngredientLineItem from './IngredientLineItem.vue'
-
-type TypeEmits = {
-  (event: 'accept'): void
-}
-
-const emit = defineEmits<TypeEmits>()
 
 const ingredients = useIngredients()
 const selectedIngredients = useSelectedIngredients()

@@ -1,7 +1,7 @@
 <template>
   <div class="footer container">
     <div class="footer__copyright">
-      {{ getCurrentYear() }} © Татьяна Панина
+      © Татьяна Панина {{ getCurrentYear() }}
     </div>
   </div>
 </template>
