@@ -15,3 +15,5 @@ export const withRouter = (app: App) => {
 
   return { app, router }
 }
+
+export { ROUTE_NAMES } from './constants'

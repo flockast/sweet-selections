@@ -8,11 +8,16 @@
         <li><a href="#">Любимые блюда</a></li>
       </ul>
     </nav>
+    <div class="header__actions">
+      <div>
+        <ThemeToggleButton color="#8b8b8b" />
+      </div>
+    </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-
+import { ThemeToggleButton } from '@/features/themeToggle'
 </script>
 
 <style lang="scss" scoped>
@@ -49,6 +54,12 @@
         }
       }
     }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    margin-left: 1.5rem;
   }
 }
 

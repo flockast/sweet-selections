@@ -23,7 +23,7 @@
     box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.15), inset 1px 1px 1px rgba(0, 0, 0, 0.05);
   }
   &::-webkit-scrollbar-thumb {
-    background-color: var(--scrollbar-thumb-bg);
+    background-color: var(--cl-scrollbar-thumb-bg);
     border-radius: 6px;
   }
   &::-webkit-scrollbar-corner {

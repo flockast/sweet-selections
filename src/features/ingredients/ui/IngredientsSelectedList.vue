@@ -3,28 +3,43 @@
     :style="{
       'height': 'auto',
       'position': 'sticky',
-      'top': '3rem'
+      'top': '11rem'
     }"
   >
     <div class="selected-ingredients">
       <div class="selected-ingredients__header">
         <div class="selected-ingredients__title">Выбранные ингредиенты</div>
-        <div class="selected-ingredients__desc">{{ description }}</div>
       </div>
-      <div class="selected-ingredients__content scroll">
+      <div class="selected-ingredients__subheader">
+        <div class="selected-ingredients__desc">{{ description }}</div>
+        <button
+          v-if="countSelected > 0"
+          class="selected-ingredients__clear"
+          @click.prevent="selectedIngredients.clear"
+        >
+          Очистить
+        </button>
+      </div>
+      <div
+        v-if="countSelected > 0"
+        class="selected-ingredients__content scroll"
+      >
         <IngredientLineItem
-          v-for="ingredient in selectedIngredients"
+          v-for="ingredient in ingredientsList"
           :key="ingredient.id"
           :item="ingredient"
-          :is-active="true"
-          @click.prevent="handleClick(ingredient)"
+          @remove="selectedIngredients.remove(ingredient.id)"
         />
       </div>
       <div
         v-if="countSelected > 1"
         class="selected-ingredients__footer"
       >
-        <TheButton>Найти блюда</TheButton>
+        <TheButton
+          @click.prevent="emit('accept')"
+        >
+          Найти блюда
+        </TheButton>
       </div>
     </div>
   </TheBox>
@@ -35,46 +50,67 @@ import { computed } from 'vue'
 import { TheBox, TheButton } from '@/shared/ui'
 import { declOfNum } from '@/shared/helpers'
 import { type TypeIngredient, useIngredients} from '@/entities/ingredients'
+import { useSelectedIngredients } from '@/entities/selectedIngredients'
 import IngredientLineItem from './IngredientLineItem.vue'
 
-const ingredients = useIngredients()
+type TypeEmits = {
+  (event: 'accept'): void
+}
 
-const selectedIngredients = computed(() => {
-  return ingredients.state.selectedIds
-    .map((id) => ingredients.getItemById(id))
-    .filter((item): item is TypeIngredient => item !== undefined)
+const emit = defineEmits<TypeEmits>()
+
+const ingredients = useIngredients()
+const selectedIngredients = useSelectedIngredients()
+
+const ingredientsList = computed(() => {
+  return selectedIngredients.state.list
+    .map((id) => ingredients.getItem(id))
+    .filter((item): item is TypeIngredient => Boolean(item))
 })
 
 const countSelected = computed(() => {
-  return ingredients.state.selectedIds.length || 0
+  return selectedIngredients.state.list.length || 0
 })
 
 const description = computed(() => (
   `${countSelected.value} ${declOfNum(countSelected.value, ['ингредиент', 'ингредиента', 'ингредиентов']) } выбрано`
 ))
-
-const handleClick = (item: TypeIngredient) => {
-  ingredients.removeItem(item.id)
-}
 </script>
 
 <style lang="scss" scoped>
 .selected-ingredients {
-  display: grid;
-  gap: 3rem;
-
   &__header {
-
+    margin-bottom: 1.5rem;
   }
 
   &__title {
     font-size: 28px;
     font-weight: bold;
-    margin-bottom: 1.5rem;
+  }
+
+  &__subheader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
 
   &__desc {
     font-size: 16px;
+  }
+
+  &__clear {
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+    background: none;
+    outline: none;
+    cursor: pointer;
+    color: var(--cl-danger);
+
+    &:active {
+      transform: translateY(1px);
+    }
   }
 
   &__filter {
@@ -82,10 +118,17 @@ const handleClick = (item: TypeIngredient) => {
   }
 
   &__content {
-    display: grid;
-    gap: 1.5rem;
+    margin-top: 3rem;
     max-height: 408px;
     overflow: auto;
+
+    & > *:not(:last-child) {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  &__footer {
+    margin-top: 3rem;
   }
 }
 </style>

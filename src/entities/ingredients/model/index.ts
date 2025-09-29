@@ -34,31 +34,13 @@ export const useIngredients = () => {
     }
   }
 
-  const removeItem = (id: TypeIngredient['id']) => {
-    state.selectedIds = state.selectedIds.filter((item) => item !== id)
-  }
-
-  const toggleItem = (id: TypeIngredient['id']) => {
-    const index = state.selectedIds.findIndex((item) => item === id)
-    if (index === -1) {
-      state.selectedIds = [
-        ...state.selectedIds,
-        id
-      ]
-    } else {
-      removeItem(id)
-    }
-  }
-
-  const getItemById = (id: TypeIngredient['id']) => {
+  const getItem = (id: TypeIngredient['id']) => {
     return state.list.find((item) => item.id === id)
   }
 
   return {
     state: readonly(state) as TypeState,
     fetch,
-    getItemById,
-    toggleItem,
-    removeItem
+    getItem
   }
 }

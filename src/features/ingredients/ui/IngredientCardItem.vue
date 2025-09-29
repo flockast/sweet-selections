@@ -4,10 +4,13 @@
     :class="{
       'is-active': isActive
     }"
-    tabindex="0"
-    role="button"
   >
-    <div class="ingredient-item__image"></div>
+    <div class="ingredient-item__image">
+      <img
+        :src="`/images/ingredients/${item.id}.jpg`"
+        :alt="item.name"
+      >
+    </div>
     <div class="ingredient-item__name">{{ item.name }}</div>
   </div>
 </template>
@@ -51,10 +54,6 @@ defineProps<TypeProps>()
 
   &__name {
     text-align: center;
-  }
-
-  &:focus {
-    box-shadow: 0 0 0 2px var(--cl-focus);
   }
 
   &:active {

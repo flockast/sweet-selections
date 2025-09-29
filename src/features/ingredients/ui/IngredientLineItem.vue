@@ -1,33 +1,73 @@
 <template>
   <div class="ingredient-item">
-    <div class="ingredient-item__image"></div>
     <div class="ingredient-item__name">{{ item.name }}</div>
+    <button
+      class="ingredient-item__remove"
+      @click.prevent="emit('remove')"
+    >
+      <IconTrash />
+    </button>
   </div>
 </template>
 
 <script lang="ts" setup>
 import { type TypeIngredient } from '@/entities/ingredients'
+import { IconTrash } from '@/shared/ui'
 
 type TypeProps = {
   item: TypeIngredient
-  isActive?: boolean
+}
+
+type TypeEmits = {
+  (event: 'remove'): void
 }
 
 defineProps<TypeProps>()
+const emit =defineEmits<TypeEmits>()
 </script>
 
 <style lang="scss" scoped>
 .ingredient-item {
+  $root: &;
+
+  position: relative;
   display: flex;
   align-items: center;
   gap: 1.5rem;
+  padding-left: 2.5rem;
 
-  &__image {
-    width: 3.2rem;
-    height: 3.2rem;
+  &:before {
+    content: '';
+    width: 1rem;
+    height: 1rem;
     border-radius: 50%;
-    overflow: hidden;
-    background: #c2c2c2;
+    position: absolute;
+    top: .8rem;
+    left: 0;
+    background: var(--cl-accent);
+  }
+
+  &__remove {
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+    background: none;
+    outline: none;
+    cursor: pointer;
+    color: var(--cl-danger);
+    opacity: 0;
+    transition: opacity .2s ease-in-out;
+
+    &:active {
+      transform: translateY(1px);
+    }
+  }
+
+  &:hover {
+    #{$root}__remove {
+      opacity: 1;
+    }
   }
 }
 </style>

@@ -1,4 +1,7 @@
 export { ContentWrapperBlock } from './ContentWrapperBlock'
 export { TheBox } from './TheBox'
+export { IconArrow } from './IconArrow'
+export { IconTrash } from './IconTrash'
 export { TheInput } from './TheInput'
 export { TheButton } from './TheButton'
+export { TheNoData } from './TheNoData'

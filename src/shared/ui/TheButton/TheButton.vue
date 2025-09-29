@@ -11,13 +11,12 @@
   margin: 0;
   border: none;
   border-radius: var(--border-radius);
-  background: var(--cl-accent);
+  background: var(--cl-button-bg);
   color: white;
   padding: 1.5rem;
   box-shadow: none;
   cursor: pointer;
   transition: opacity .2s ease-in-out, transform .2s ease-in-out;
-  opacity: .9;
 
   &:active {
     transform: scale(.95);

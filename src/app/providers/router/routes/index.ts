@@ -12,6 +12,11 @@ export const routes: RouteRecordRaw[] = [
         component: () => import('@/pages/home/ui/HomePage.vue'),
       },
       {
+        path: '/dishes',
+        name: ROUTE_NAMES.DISHES,
+        component: () => import('@/pages/dishes/ui/DishesPage.vue'),
+      },
+      {
         path: '/:pathMatch(.*)*',
         component: () => import('@/pages/error/ui/ErrorPage.vue')
       }

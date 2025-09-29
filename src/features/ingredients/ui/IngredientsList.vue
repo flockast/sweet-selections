@@ -19,29 +19,26 @@
           v-for="ingredient in filteredIngredients"
           :key="ingredient.id"
           :item="ingredient"
-          :is-active="isActiveItem(ingredient)"
-          @click="handleClick(ingredient)"
+          :is-active="selectedIngredients.has(ingredient.id)"
+          @click="  selectedIngredients.toggle(ingredient.id)"
         />
       </div>
-      <div
-        v-else
-        class="ingredients__no-data"
-      >
-        Ничего не найдено...
-      </div>
+      <TheNoData v-else />
     </div>
   </TheBox>
 </template>
 
 <script lang="ts" setup>
 import { computed, ref } from 'vue'
-import { TheBox, TheInput } from '@/shared/ui'
-import { type TypeIngredient, useIngredients } from '@/entities/ingredients'
+import { TheBox, TheInput, TheNoData } from '@/shared/ui'
+import { useIngredients } from '@/entities/ingredients'
+import { useSelectedIngredients } from '@/entities/selectedIngredients'
 import IngredientCardItem from './IngredientCardItem.vue'
 
 const filterValue = ref('')
 
 const ingredients = useIngredients()
+const selectedIngredients = useSelectedIngredients()
 
 const filteredIngredients = computed(() => {
   return ingredients.state.list.filter((item) => {
@@ -54,29 +51,18 @@ const countAll = computed(() => {
 })
 
 const countSelected = computed(() => {
-  return ingredients.state.selectedIds.length || 0
+  return selectedIngredients.state.list.length || 0
 })
 
 const description = computed(() => (
   `Выбрано ${countSelected.value} из ${countAll.value}`
 ))
-
-const handleClick = (item: TypeIngredient) => {
-  ingredients.toggleItem(item.id)
-}
-
-const isActiveItem = (item: TypeIngredient) => {
-  return ingredients.state.selectedIds.findIndex((id) => id === item.id) !== -1
-}
 </script>
 
 <style lang="scss" scoped>
 .ingredients {
-  display: grid;
-  gap: 1.5rem;
-
   &__header {
-
+    margin-bottom: 1.5rem;
   }
 
   &__title {
@@ -86,22 +72,16 @@ const isActiveItem = (item: TypeIngredient) => {
   }
 
   &__desc {
+    margin-bottom: 3rem;
     font-size: 16px;
   }
 
-  &__filter {
-    margin-top: 3rem;
-  }
+  &__filter {}
 
   &__content {
     display: grid;
     gap: 1.5rem;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  &__no-data {
-    padding: 3rem;
-    text-align: center;
   }
 }
 </style>

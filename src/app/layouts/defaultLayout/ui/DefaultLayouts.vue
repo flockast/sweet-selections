@@ -40,6 +40,12 @@ import { ContentWrapperBlock } from '@/shared/ui'
 
 .default-layout__header {
   grid-area: header;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: var(--cl-header-bg);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
   border-bottom: 1px solid var(--cl-border);
   transition: border .2s ease-in-out;
 }
