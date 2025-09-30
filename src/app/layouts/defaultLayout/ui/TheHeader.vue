@@ -12,6 +12,13 @@
       <ul>
         <li>
           <RouterLink
+            :to="{ name: ROUTE_NAMES.DISHES }"
+          >
+            Подходящие блюда
+          </RouterLink>
+        </li>
+        <li>
+          <RouterLink
             :to="{ name: ROUTE_NAMES.FAVOURITE_DISHED }"
           >
             Любимые блюда
@@ -58,6 +65,10 @@ import TheLogo from './TheLogo.vue'
       display: flex;
       align-items: center;
       list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+
       li {
         a {
           display: block;
@@ -86,7 +97,7 @@ import TheLogo from './TheLogo.vue'
   &__actions {
     display: flex;
     align-items: center;
-    margin-left: 1.5rem;
+    margin-left: 3rem;
   }
 }
 </style>

@@ -13,6 +13,8 @@
   --cl-heart-bg: white;
   --cl-like-bg: rgb(0 0 0 / 48%);
   --cl-like-border: rgb(0 0 0 / 48%);
+  --cl-popup-bg: #fbf4fa;
+  --cl-popup-window-bg: #2f2e2e;
   --border-radius: 10px;
 }
 
@@ -28,6 +30,14 @@ html[theme="light"] {
   --cl-like-bg: rgb(255 255 255 / 72%);
   --cl-like-border: #505050;
   --cl-button-bg: #ff9aab;
+  --cl-popup-bg: #ffffff;
+  --cl-popup-window-bg: #fbfbfb;
+
+  --shadow-color: 0deg 0% 73%;
+  --popup-window-box-shadow:
+    0px 0.3px 0.3px hsl(var(--shadow-color) / 0.85),
+    0.1px 4.1px 4px -1.7px hsl(var(--shadow-color) / 0.69),
+    0.6px 21px 20.5px -3.5px hsl(var(--shadow-color) / 0.53);
 }
 
 html[theme="dark"] {
@@ -42,4 +52,7 @@ html[theme="dark"] {
   --cl-like-bg: rgb(0 0 0 / 48%);
   --cl-like-border: #ababab;
   --cl-button-bg: #ff9aab;
+  --cl-popup-bg: #151413;
+  --cl-popup-window-bg: #2f2e2e;
+  --popup-window-box-shadow: none;
 }

@@ -10,7 +10,7 @@
 
 <script lang="ts" setup>
 import { computed } from 'vue'
-import { useRouting } from '@/shared/lib'
+import { useRouting } from '@/shared/lib/useRouting'
 import { TheErrorBlock } from '@/shared/ui'
 import { useDishes } from '@/entities/dishes'
 import { DishViewer } from '@/features/dishViewer'

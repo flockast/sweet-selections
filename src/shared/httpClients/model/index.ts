@@ -1,4 +1,4 @@
-import { createHttpClient, type TypeConfig } from '@/shared/lib'
+import { createHttpClient, type TypeConfig } from '@/shared/lib/httpClient'
 
 type TypeHttpClient = ReturnType<typeof createHttpClient>
 

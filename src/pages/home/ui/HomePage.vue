@@ -1,4 +1,5 @@
 <template>
+  <GreetingPopup />
   <div class="home container">
     <div>
       <IngredientsList />
@@ -11,6 +12,7 @@
 
 <script lang="ts" setup>
 import { IngredientsList, IngredientsSelectedList } from '@/features/ingredients'
+import { GreetingPopup } from '@/features/greetingPopup'
 </script>
 
 <style lang="scss" scoped>

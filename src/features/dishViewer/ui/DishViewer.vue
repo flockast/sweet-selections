@@ -2,15 +2,6 @@
   <TheBox>
     <div class="dish-viewer">
       <div class="dish-viewer__header">
-        <div class="dish-viewer__back">
-          <TheButtonLink
-            :to="{
-              name: ROUTE_NAMES.DISHES
-            }"
-          >
-            <IconArrow direction="prev" />
-          </TheButtonLink>
-        </div>
         <div class="dish-viewer__title">{{ item.name }}</div>
       </div>
       <div class="dish-viewer__desc">{{ item.description }}</div>
