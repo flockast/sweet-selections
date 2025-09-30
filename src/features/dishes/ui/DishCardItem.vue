@@ -1,5 +1,11 @@
 <template>
   <div class="dish-card">
+    <div class="dish-card__heart">
+      <TheLike
+        :model-value="isFavourite"
+        @update:model-value="favouriteDishes.toggle(item.id)"
+      />
+    </div>
     <div class="dish-card__main">
       <div class="dish-card__image">
         <img
@@ -32,20 +38,29 @@
 </template>
 
 <script lang="ts" setup>
-import { ROUTE_NAMES } from '@/app/providers/router'
-import { TheButtonLink } from '@/shared/ui'
+import { computed } from 'vue'
+import { ROUTE_NAMES } from '@/shared/constants'
+import { TheButtonLink, TheLike } from '@/shared/ui'
 import { type TypeDish } from '@/entities/dishes'
+import { useFavouriteDishes } from '@/entities/favouriteDishes'
 
 type TypeProps = {
   item: TypeDish
   optionals?: string[]
 }
 
-defineProps<TypeProps>()
+const props = defineProps<TypeProps>()
+
+const favouriteDishes = useFavouriteDishes()
+
+const isFavourite = computed(() => {
+  return favouriteDishes.state.list.includes(props.item.id)
+})
 </script>
 
 <style lang="scss" scoped>
 .dish-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -73,6 +88,12 @@ defineProps<TypeProps>()
       height: 100%;
       object-fit: cover;
     }
+  }
+
+  &__heart {
+    position: absolute;
+    top: 3rem;
+    right: 3rem;
   }
 
   &__name {

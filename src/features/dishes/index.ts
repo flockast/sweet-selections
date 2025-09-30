@@ -1,2 +1,3 @@
 import DishesListSelected from './ui/DishesListSelected.vue'
-export { DishesListSelected }
+import DishesListFavourite from './ui/DishesListFavourite.vue'
+export { DishesListSelected, DishesListFavourite }

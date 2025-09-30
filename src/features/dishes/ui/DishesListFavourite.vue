@@ -1,8 +1,8 @@
 <template>
   <TheBox>
-    <div class="dishes-selected">
-      <div class="dishes-selected__header">
-        <div class="dishes-selected__back">
+    <div class="favourite-dishes">
+      <div class="favourite-dishes__header">
+        <div class="favourite-dishes__back">
           <TheButtonLink
             :to="{
               name: ROUTE_NAMES.HOME
@@ -11,17 +11,16 @@
             <IconArrow direction="prev" />
           </TheButtonLink>
         </div>
-        <div class="dishes-selected__title">Ваши кондитерские творения</div>
+        <div class="favourite-dishes__title">Ваши любимые кондитерские блюда</div>
       </div>
       <div
-        v-if="selectedDishes.length"
-        class="dishes-selected__content"
+        v-if="favouriteDishesList.length"
+        class="favourite-dishes__content"
       >
         <DishCardItem
-          v-for="dish in selectedDishes"
+          v-for="dish in favouriteDishesList"
           :key="dish.id"
           :item="dish"
-          :optionals="getOptionalsIngredients(dish)"
         />
       </div>
       <TheNoData v-else />
@@ -34,29 +33,21 @@ import { computed } from 'vue'
 import { ROUTE_NAMES } from '@/shared/constants'
 import { TheBox, TheButtonLink, TheNoData, IconArrow } from '@/shared/ui'
 import { type TypeDish, useDishes } from '@/entities/dishes'
-import { useSelectedIngredients } from '@/entities/selectedIngredients'
-import { useIngredients } from '@/entities/ingredients'
+import { useFavouriteDishes } from '@/entities/favouriteDishes'
 import DishCardItem from './DishCardItem.vue'
 
 const dishes = useDishes()
-const ingredients = useIngredients()
-const selectedIngredients = useSelectedIngredients()
+const favouriteDishes = useFavouriteDishes()
 
-const selectedDishes = computed(() => dishes.state.list.filter((dish) => {
-  return dish.criticalIngredients.every((id) => selectedIngredients.state.list.includes(id))
-}))
-
-const getOptionalsIngredients = (dish: TypeDish) => {
-  return dish.ingredients
-    .filter((item) => !selectedIngredients.has(item.id))
-    .map((item) => ingredients.getItem(item.id))
+const favouriteDishesList = computed(() => (
+  favouriteDishes.state.list
+    .map((item) => dishes.getItem(item))
     .filter((item): item is TypeDish => Boolean(item))
-    .map((item) => item.name.toLowerCase())
-}
+))
 </script>
 
 <style lang="scss" scoped>
-.dishes-selected {
+.favourite-dishes {
   &__header {
     display: flex;
     align-items: center;

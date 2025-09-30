@@ -60,7 +60,7 @@
 
 <script lang="ts" setup>
 import { computed } from 'vue'
-import { ROUTE_NAMES } from '@/app/providers/router'
+import { ROUTE_NAMES } from '@/shared/constants'
 import { IconArrow, TheBox, TheButtonLink } from '@/shared/ui'
 import { type TypeDish } from '@/entities/dishes'
 import { IconClock, IconPerson } from '@/shared/ui'

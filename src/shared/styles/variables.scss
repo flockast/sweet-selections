@@ -10,6 +10,9 @@
   --cl-header-bg: rgb(21, 20, 19, 0.4);
   --cl-success: #309a30;
   --cl-danger: #ff3b3b;
+  --cl-heart-bg: white;
+  --cl-like-bg: rgb(0 0 0 / 48%);
+  --cl-like-border: rgb(0 0 0 / 48%);
   --border-radius: 10px;
 }
 
@@ -22,6 +25,8 @@ html[theme="light"] {
   --cl-focus: #424242;
   --cl-scrollbar-thumb-bg: #424242;
   --cl-header-bg: rgba(255, 255, 255, 0.4);
+  --cl-like-bg: rgb(255 255 255 / 72%);
+  --cl-like-border: #505050;
   --cl-button-bg: #ff9aab;
 }
 
@@ -34,5 +39,7 @@ html[theme="dark"] {
   --cl-focus: #9c9c9c;
   --cl-scrollbar-thumb-bg: #9c9c9c;
   --cl-header-bg: rgb(21, 20, 19, 0.4);
+  --cl-like-bg: rgb(0 0 0 / 48%);
+  --cl-like-border: #ababab;
   --cl-button-bg: #ff9aab;
 }

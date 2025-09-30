@@ -1,4 +1,4 @@
-import { readonly, reactive } from 'vue'
+import { reactive, readonly } from 'vue'
 import { LOCAL_STORAGE_KEY } from '../constants'
 
 type TypeItem = number
@@ -11,7 +11,7 @@ const state = reactive<TypeState>({
   list: []
 })
 
-export const useSelectedIngredients = () => {
+export const useFavouriteDishes = () => {
   const set = (payload: TypeState['list']) => {
     state.list = payload
     localStorage.setItem(LOCAL_STORAGE_KEY, state.list.join(','))
@@ -27,6 +27,13 @@ export const useSelectedIngredients = () => {
     )
   }
 
+  const add = (id: TypeItem) => {
+    set([
+      ...state.list,
+      id
+    ])
+  }
+
   const remove = (id: TypeItem) => {
     set(
       state.list.filter((item) => item !== id)
@@ -36,29 +43,15 @@ export const useSelectedIngredients = () => {
   const toggle = (id: TypeItem) => {
     const index = state.list.findIndex((item) => item === id)
     if (index === -1) {
-      set([
-        ...state.list,
-        id
-      ])
+      add(id)
     } else {
       remove(id)
     }
   }
 
-  const clear = () => {
-    set([])
-  }
-
-  const has = (id: TypeItem) => {
-    return state.list.findIndex((item) => item === id) !== -1
-  }
-
   return {
     state: readonly(state) as TypeState,
     fetchFromCache,
-    toggle,
-    remove,
-    clear,
-    has
+    toggle
   }
 }

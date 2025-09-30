@@ -49,7 +49,7 @@
 
 <script lang="ts" setup>
 import { computed } from 'vue'
-import { ROUTE_NAMES } from '@/app/providers/router'
+import { ROUTE_NAMES } from '@/shared/constants'
 import { TheBox, TheButtonLink } from '@/shared/ui'
 import { declOfNum } from '@/shared/helpers'
 import { type TypeIngredient, useIngredients} from '@/entities/ingredients'

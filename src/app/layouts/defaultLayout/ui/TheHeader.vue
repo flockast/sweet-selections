@@ -1,11 +1,22 @@
 <template>
   <div class="header container">
     <div class="header__logo">
-      <div class="logo">sweet selections</div>
+      <RouterLink
+        :to="{ name: ROUTE_NAMES.HOME }"
+      >
+        <TheLogo />
+      </RouterLink>
+      <div class="logo"></div>
     </div>
     <nav class="header__menu">
       <ul>
-        <li><a href="#">Любимые блюда</a></li>
+        <li>
+          <RouterLink
+            :to="{ name: ROUTE_NAMES.FAVOURITE_DISHED }"
+          >
+            Любимые блюда
+          </RouterLink>
+        </li>
       </ul>
     </nav>
     <div class="header__actions">
@@ -17,7 +28,9 @@
 </template>
 
 <script lang="ts" setup>
+import { ROUTE_NAMES } from '@/shared/constants'
 import { ThemeToggleButton } from '@/features/themeToggle'
+import TheLogo from './TheLogo.vue'
 </script>
 
 <style lang="scss" scoped>
@@ -29,6 +42,15 @@ import { ThemeToggleButton } from '@/features/themeToggle'
 
   &__logo {
     margin-right: auto;
+
+    a {
+      display: block;
+      text-decoration: none;
+
+      &:active {
+        transform: translateY(1px);
+      }
+    }
   }
 
   &__menu {
@@ -42,14 +64,19 @@ import { ThemeToggleButton } from '@/features/themeToggle'
           color: var(--cl-text);
           text-decoration: none;
           transition: background .2s ease-in-out, color .2s ease-in-out;
+          padding: 0 .2rem;
+          border-radius: 5px 5px 0 0;
 
           &:hover {
-            background: var(--cl-accent);
-            color: var(--cl-base-bg);
+            box-shadow: inset 0 -2px 0 var(--cl-accent);
           }
 
           &:active {
             transform: translateY(1px);
+          }
+
+          &.router-link-active {
+            box-shadow: inset 0 -2px 0 var(--cl-accent);
           }
         }
       }
@@ -61,13 +88,5 @@ import { ThemeToggleButton } from '@/features/themeToggle'
     align-items: center;
     margin-left: 1.5rem;
   }
-}
-
-.logo {
-  font-family: "Pacifico", cursive;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 4.2rem;
-  color: var(--cl-accent);
 }
 </style>

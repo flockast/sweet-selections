@@ -1,5 +1,5 @@
 import { type RouteRecordRaw } from 'vue-router'
-import { ROUTE_NAMES } from '../constants'
+import { ROUTE_NAMES } from '@/shared/constants'
 
 export const routes: RouteRecordRaw[] = [
   {
@@ -20,6 +20,11 @@ export const routes: RouteRecordRaw[] = [
         path: '/dishes/:id',
         name: ROUTE_NAMES.DISH,
         component: () => import('@/pages/dish/ui/DishPage.vue'),
+      },
+      {
+        path: '/favourite-dishes',
+        name: ROUTE_NAMES.FAVOURITE_DISHED,
+        component: () => import('@/pages/favouriteDishes/ui/FavouriteDishes.vue'),
       },
       {
         path: '/:pathMatch(.*)*',
