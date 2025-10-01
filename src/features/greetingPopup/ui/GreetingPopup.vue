@@ -47,17 +47,17 @@ const handleClickGo = () => {
 const initParallax = () => {
   const croissant = document.querySelector('.croissant')
   if (croissant instanceof HTMLElement) {
-    parallax.addElement(croissant, 0.09)
+    parallax.addElement(croissant, 0.08)
   }
 
   const pancake = document.querySelector('.pancake')
   if (pancake instanceof HTMLElement) {
-    parallax.addElement(pancake, 0.01)
+    parallax.addElement(pancake, 0.025)
   }
 
   const title = document.querySelector('.window__title')
   if (title instanceof HTMLElement) {
-    parallax.addElement(title, 0.01)
+    parallax.addElement(title, 0.005)
   }
 
   parallax.start()
@@ -170,8 +170,8 @@ onMounted(async () => {
   position: absolute;
   right: 0;
   top: 100px;
-  width: 160px;
-  height: 100px;
+  width: 130px;
+  height: 80px;
   background: url('../assets/croissant.png');
   background-size: cover;
 }
@@ -180,8 +180,8 @@ onMounted(async () => {
   position: absolute;
   left: 0;
   bottom: 0;
-  width: 188px;
-  height: 100px;
+  width: 245px;
+  height: 130px;
   background: url('../assets/pancake.png');
   background-size: cover;
 }
