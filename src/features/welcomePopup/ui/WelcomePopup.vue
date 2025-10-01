@@ -1,11 +1,11 @@
 <template>
-  <Transition name="fade">
+  <Transition name="overlay">
     <div
-      v-if="greetingPopup.state.isVisible"
+      v-if="showOverlay"
       class="greeting-popup"
       @click.stop
     >
-      <Transition name="fade-up">
+      <Transition name="window">
         <div
           v-if="showWindow"
           class="window"
@@ -17,7 +17,7 @@
           <div class="window__desc">Откройте для себя идеальные рецепты кондитерских изделий, выбирая ингредиенты, которые у вас есть. Наше приложение поможет вам легко превратить обычные ингредиенты во вкусные угощения.</div>
           <div class="window__footer">
             <div class="window__button">
-              <TheButton @click.prevent="handleClickGo">Начать творить</TheButton>
+              <TheButton @click.prevent="handleClickStart">Начать творить</TheButton>
             </div>
           </div>
         </div>
@@ -27,88 +27,70 @@
 </template>
 
 <script lang="ts" setup>
-import { nextTick, onBeforeUnmount, onMounted, ref } from 'vue'
-import { useGreetingPopup } from '@/entities/greetingPopup'
+import { onMounted, ref } from 'vue'
 import { TheButton } from '@/shared/ui'
-import { createMouseParallax } from '@/shared/lib/parallax'
+import { delay } from '@/shared/helpers'
+import { initParallax, destroyParallax } from '../helpers'
 
+const showOverlay = ref(true)
 const showWindow = ref(false)
 
-const greetingPopup = useGreetingPopup()
-const parallax = createMouseParallax()
+type TypeEmits = {
+  (event: 'close'): void
+}
 
-const handleClickGo = () => {
+const emit = defineEmits<TypeEmits>()
+
+const handleClickStart = async () => {
+  await close()
+  emit('close')
+}
+
+const open = async () => {
+  showOverlay.value = true
+  await delay(300)
+  showWindow.value = true
+  await delay(300)
+  initParallax()
+}
+
+const close = async () => {
   showWindow.value = false
-  setTimeout(() => {
-    greetingPopup.hide()
-  }, 1000)
-}
-
-const initParallax = () => {
-  const croissant = document.querySelector('.croissant')
-  if (croissant instanceof HTMLElement) {
-    parallax.addElement(croissant, 0.08)
-  }
-
-  const pancake = document.querySelector('.pancake')
-  if (pancake instanceof HTMLElement) {
-    parallax.addElement(pancake, 0.025)
-  }
-
-  const title = document.querySelector('.window__title')
-  if (title instanceof HTMLElement) {
-    parallax.addElement(title, 0.005)
-  }
-
-  parallax.start()
-}
-
-const destroyParallax = () => {
-  parallax.start()
-}
-
-onBeforeUnmount(() => {
+  await delay(300)
+  showOverlay.value = false
+  await delay(300)
   destroyParallax()
-})
-
-const nextTickDelay = async () => {
-  await nextTick()
-  return new Promise((resolve) => setTimeout(resolve, 300))
 }
 
 onMounted(async () => {
-  if (greetingPopup.state.isVisible) {
-    showWindow.value = true
-    await nextTickDelay()
-    initParallax()
-  }
+  await open()
 })
 </script>
 
 <style lang="scss" scoped>
-.fade-up-enter-active,
-.fade-up-leave-active {
-  transition: opacity 1s ease, transform 1s ease;
-}
-
-.fade-up-enter-from {
-  opacity: 0;
-  transform: translateY(50px);
-}
-
-.fade-up-leave-to {
-  opacity: 0;
-  transform: translateY(50px);
-}
-
-.fade-enter-active,
-.fade-leave-active {
+.overlay-enter-active,
+.overlay-leave-active {
   transition: opacity .3s ease;
 }
 
-.fade-enter-from,
-.fade-leave-to {
+.overlay-enter-from,
+.overlay-leave-to {
   opacity: 0;
+}
+
+.window-enter-active,
+.window-leave-active {
+  transition: opacity .3s ease, transform .3s ease;
+}
+
+.window-enter-from {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.window-leave-to {
+  opacity: 0;
+  transform: translateY(50px);
 }
 
 .greeting-popup {

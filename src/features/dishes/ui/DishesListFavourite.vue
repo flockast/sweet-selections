@@ -2,15 +2,6 @@
   <TheBox>
     <div class="favourite-dishes">
       <div class="favourite-dishes__header">
-        <div class="favourite-dishes__back">
-          <TheButtonLink
-            :to="{
-              name: ROUTE_NAMES.HOME
-            }"
-          >
-            <IconArrow direction="prev" />
-          </TheButtonLink>
-        </div>
         <div class="favourite-dishes__title">Ваши любимые кондитерские блюда</div>
       </div>
       <div

@@ -4,6 +4,7 @@ import { withTheme } from './theme'
 import { withHttpClients } from './httpClients'
 import { withData } from './data'
 import { withCache } from './cache'
+import { withWelcomePopup } from './welcomePopup'
 
 export const withProviders = async (app: App) => {
   withTheme()
@@ -11,7 +12,9 @@ export const withProviders = async (app: App) => {
   await withData()
   withCache()
 
-  const { app: appWithRouter, router} = withRouter(app)
+  const { app: appWithRouter, router} = await withRouter(app)
+
+  withWelcomePopup(router)
 
   return {
     app: appWithRouter,

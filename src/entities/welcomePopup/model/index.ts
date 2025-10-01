@@ -5,10 +5,10 @@ type TypeState = {
 }
 
 const state = reactive<TypeState>({
-  isVisible: true
+  isVisible: false
 })
 
-export const useGreetingPopup = () => {
+export const useWelcomePopup = () => {
   const show = () => {
     state.isVisible = true
   }

@@ -3,7 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import { routes } from './routes'
 import { useConfig } from '@/shared/config'
 
-export const withRouter = (app: App) => {
+export const withRouter = async (app: App) => {
   const config = useConfig()
 
   const router = createRouter({
@@ -19,6 +19,8 @@ export const withRouter = (app: App) => {
   })
 
   app.use(router)
+
+  await router.isReady()
 
   return { app, router }
 }
