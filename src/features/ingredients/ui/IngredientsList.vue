@@ -33,7 +33,7 @@ import { computed, ref } from 'vue'
 import { TheBox, TheInput, TheNoData } from '@/shared/ui'
 import { useIngredients } from '@/entities/ingredients'
 import { useSelectedIngredients } from '@/entities/selectedIngredients'
-import IngredientCardItem from './IngredientCardItem.vue'
+import IngredientCardItem from './IngredientCardItem/IngredientCardItem.vue'
 
 const filterValue = ref('')
 

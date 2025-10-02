@@ -2,6 +2,11 @@
   <TheBox>
     <div class="dish-viewer">
       <div class="dish-viewer__header">
+        <div class="dish-viewer__back">
+          <TheButtonLink :to="back">
+            <IconArrow direction="prev" />
+          </TheButtonLink>
+        </div>
         <div class="dish-viewer__title">{{ item.name }}</div>
       </div>
       <div class="dish-viewer__desc">{{ item.description }}</div>
@@ -51,13 +56,14 @@
 
 <script lang="ts" setup>
 import { computed } from 'vue'
-import { ROUTE_NAMES } from '@/shared/constants'
+import { type RouteLocationRaw } from 'vue-router'
 import { IconArrow, TheBox, TheButtonLink } from '@/shared/ui'
 import { type TypeDish } from '@/entities/dishes'
 import { IconClock, IconPerson } from '@/shared/ui'
 import { useIngredients } from '@/entities/ingredients'
 
 type TypeProps = {
+  back: RouteLocationRaw
   item: TypeDish
 }
 

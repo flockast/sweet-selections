@@ -24,12 +24,7 @@
         + {{ optionals.join(', ') }}
       </div>
       <TheButtonLink
-        :to="{
-          name: ROUTE_NAMES.DISH,
-          params: {
-            id: item.id
-          }
-        }"
+        :to="to"
       >
         Посмотреть рецепт
       </TheButtonLink>
@@ -39,13 +34,14 @@
 
 <script lang="ts" setup>
 import { computed } from 'vue'
-import { ROUTE_NAMES } from '@/shared/constants'
+import { type RouteLocationRaw } from 'vue-router'
 import { TheButtonLink, TheLike } from '@/shared/ui'
 import { type TypeDish } from '@/entities/dishes'
 import { useFavouriteDishes } from '@/entities/favouriteDishes'
 
 type TypeProps = {
   item: TypeDish
+  to: RouteLocationRaw
   optionals?: string[]
 }
 

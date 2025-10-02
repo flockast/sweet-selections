@@ -22,6 +22,12 @@
           :key="dish.id"
           :item="dish"
           :optionals="getOptionalsIngredients(dish)"
+          :to="{
+            name: ROUTE_NAMES.DISH,
+            params: {
+              id: dish.id
+            }
+          }"
         />
       </div>
       <TheNoData v-else />
@@ -36,7 +42,7 @@ import { TheBox, TheButtonLink, TheNoData, IconArrow } from '@/shared/ui'
 import { type TypeDish, useDishes } from '@/entities/dishes'
 import { useSelectedIngredients } from '@/entities/selectedIngredients'
 import { useIngredients } from '@/entities/ingredients'
-import DishCardItem from './DishCardItem.vue'
+import DishCardItem from './DishCardItem/DishCardItem.vue'
 
 const dishes = useDishes()
 const ingredients = useIngredients()

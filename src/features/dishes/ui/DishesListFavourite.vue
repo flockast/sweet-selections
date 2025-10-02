@@ -12,6 +12,12 @@
           v-for="dish in favouriteDishesList"
           :key="dish.id"
           :item="dish"
+          :to="{
+            name: ROUTE_NAMES.FAVOURITE_DISH,
+            params: {
+              id: dish.id
+            }
+          }"
         />
       </div>
       <TheNoData v-else />
@@ -22,10 +28,10 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
 import { ROUTE_NAMES } from '@/shared/constants'
-import { TheBox, TheButtonLink, TheNoData, IconArrow } from '@/shared/ui'
+import { TheBox, TheNoData } from '@/shared/ui'
 import { type TypeDish, useDishes } from '@/entities/dishes'
 import { useFavouriteDishes } from '@/entities/favouriteDishes'
-import DishCardItem from './DishCardItem.vue'
+import DishCardItem from './DishCardItem/DishCardItem.vue'
 
 const dishes = useDishes()
 const favouriteDishes = useFavouriteDishes()

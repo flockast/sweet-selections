@@ -19,7 +19,7 @@
         </li>
         <li>
           <RouterLink
-            :to="{ name: ROUTE_NAMES.FAVOURITE_DISHED }"
+            :to="{ name: ROUTE_NAMES.FAVOURITE_DISHES }"
           >
             Любимые блюда
           </RouterLink>

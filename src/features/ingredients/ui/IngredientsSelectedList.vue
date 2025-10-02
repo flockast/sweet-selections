@@ -54,7 +54,7 @@ import { TheBox, TheButtonLink } from '@/shared/ui'
 import { declOfNum } from '@/shared/helpers'
 import { type TypeIngredient, useIngredients} from '@/entities/ingredients'
 import { useSelectedIngredients } from '@/entities/selectedIngredients'
-import IngredientLineItem from './IngredientLineItem.vue'
+import IngredientLineItem from './IngredientLineItem/IngredientLineItem.vue'
 
 const ingredients = useIngredients()
 const selectedIngredients = useSelectedIngredients()
