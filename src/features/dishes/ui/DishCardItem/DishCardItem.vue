@@ -17,12 +17,20 @@
       <div class="dish-card__desc">{{ item.description }}</div>
     </div>
     <div class="dish-card__footer">
-      <div
-        v-if="optionals?.length"
-        class="dish-card__optionals"
-      >
-        + {{ optionals.join(', ') }}
-      </div>
+      <template v-if="Array.isArray(optionals)">
+        <div
+          v-if="optionals.length"
+          class="dish-card__optionals"
+        >
+          + {{ optionals.join(', ') }}
+        </div>
+        <div
+          v-else
+          class="dish-card__full-complete"
+        >
+          всех ингредиентов хватает
+        </div>
+      </template>
       <TheButtonLink
         :to="to"
       >
@@ -103,6 +111,12 @@ const isFavourite = computed(() => {
   }
 
   &__optionals {
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+    color: var(--cl-danger);
+  }
+
+  &__full-complete {
     margin-bottom: 1.5rem;
     font-size: 1.4rem;
     color: var(--cl-success);
