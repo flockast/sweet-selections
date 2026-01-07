@@ -23,7 +23,7 @@ const dishes = useDishes()
 const routing = useRouting()
 
 const dish = computed(() => {
-  const paramId = +routing.get().params?.id || 0
+  const paramId = Number(routing.get().params?.id) || 0
   return dishes.getItem(paramId)
 })
 </script>
