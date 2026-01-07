@@ -1,5 +1,5 @@
-import { useConfig } from '@/shared/config'
-import { useHttpClients, HTTP_CLIENT_NAMES } from '@/shared/httpClients'
+import { useConfig } from '@/shared/entities/config'
+import { useHttpClients, HTTP_CLIENT_NAMES } from '@/shared/entities/http-clients'
 
 export const withHttpClients = () => {
   const config = useConfig()

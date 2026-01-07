@@ -1,2 +1,2 @@
-export * from './model'
-export * from './types'
+export * from './ingredients.model'
+export * from './ingredients.types'

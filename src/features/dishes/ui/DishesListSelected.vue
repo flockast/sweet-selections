@@ -40,7 +40,7 @@ import { computed } from 'vue'
 import { ROUTE_NAMES } from '@/shared/constants'
 import { TheBox, TheButtonLink, TheNoData, IconArrow } from '@/shared/ui'
 import { type TypeDish, useDishes } from '@/entities/dishes'
-import { useSelectedIngredients } from '@/entities/selectedIngredients'
+import { useSelectedIngredients } from '@/entities/selected-ingredients'
 import { useIngredients } from '@/entities/ingredients'
 import DishCardItem from './DishCardItem/DishCardItem.vue'
 

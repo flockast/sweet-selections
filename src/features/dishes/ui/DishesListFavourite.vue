@@ -30,7 +30,7 @@ import { computed } from 'vue'
 import { ROUTE_NAMES } from '@/shared/constants'
 import { TheBox, TheNoData } from '@/shared/ui'
 import { type TypeDish, useDishes } from '@/entities/dishes'
-import { useFavouriteDishes } from '@/entities/favouriteDishes'
+import { useFavouriteDishes } from '@/entities/favourite-dishes'
 import DishCardItem from './DishCardItem/DishCardItem.vue'
 
 const dishes = useDishes()

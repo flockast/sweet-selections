@@ -1,6 +1,6 @@
 import { type Router } from 'vue-router'
 import { ROUTE_NAMES } from '@/shared/constants'
-import { useWelcomePopup } from '@/entities/welcomePopup'
+import { useWelcomePopup } from '@/entities/welcome-popup'
 
 export const withWelcomePopup = (router: Router) => {
   const welcomePopup = useWelcomePopup()

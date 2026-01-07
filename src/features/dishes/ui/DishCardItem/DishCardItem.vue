@@ -45,7 +45,7 @@ import { computed } from 'vue'
 import { type RouteLocationRaw } from 'vue-router'
 import { TheButtonLink, TheLike } from '@/shared/ui'
 import { type TypeDish } from '@/entities/dishes'
-import { useFavouriteDishes } from '@/entities/favouriteDishes'
+import { useFavouriteDishes } from '@/entities/favourite-dishes'
 
 type TypeProps = {
   item: TypeDish

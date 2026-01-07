@@ -24,12 +24,12 @@ export const routes: RouteRecordRaw[] = [
       {
         path: '/favourite-dishes',
         name: ROUTE_NAMES.FAVOURITE_DISHES,
-        component: () => import('@/pages/favouriteDishes/ui/FavouriteDishesPage.vue'),
+        component: () => import('@/pages/favourite-dishes/ui/FavouriteDishesPage.vue'),
       },
       {
         path: '/favourite-dishes/:id',
         name: ROUTE_NAMES.FAVOURITE_DISH,
-        component: () => import('@/pages/favouriteDish/ui/FavouriteDishPage.vue'),
+        component: () => import('@/pages/favourite-dish/ui/FavouriteDishPage.vue'),
       },
       {
         path: '/:pathMatch(.*)*',

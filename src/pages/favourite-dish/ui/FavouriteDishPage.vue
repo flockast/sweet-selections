@@ -4,7 +4,7 @@
       v-if="dish"
       :item="dish"
       :back="{
-        name: ROUTE_NAMES.DISHES
+        name: ROUTE_NAMES.FAVOURITE_DISHES
       }"
     />
     <TheErrorBlock v-else />
@@ -13,8 +13,8 @@
 
 <script lang="ts" setup>
 import { computed } from 'vue'
-import { ROUTE_NAMES } from '@/shared/constants'
 import { useRouting } from '@/shared/composables/useRouting'
+import { ROUTE_NAMES } from '@/shared/constants'
 import { TheErrorBlock } from '@/shared/ui'
 import { useDishes } from '@/entities/dishes'
 import { DishesViewer } from '@/features/dishes'

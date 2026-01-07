@@ -1,5 +1,5 @@
-import { useSelectedIngredients } from '@/entities/selectedIngredients'
-import { useFavouriteDishes } from '@/entities/favouriteDishes/model'
+import { useSelectedIngredients } from '@/entities/selected-ingredients'
+import { useFavouriteDishes } from '@/entities/favourite-dishes'
 
 export const withCache = () => {
   const selectedIngredients = useSelectedIngredients()

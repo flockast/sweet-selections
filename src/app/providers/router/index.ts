@@ -1,7 +1,7 @@
 import { type App } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import { routes } from './routes'
-import { useConfig } from '@/shared/config'
+import { useConfig } from '@/shared/entities/config'
 
 export const withRouter = async (app: App) => {
   const config = useConfig()

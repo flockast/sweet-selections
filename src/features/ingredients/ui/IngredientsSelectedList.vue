@@ -53,7 +53,7 @@ import { ROUTE_NAMES } from '@/shared/constants'
 import { TheBox, TheButtonLink } from '@/shared/ui'
 import { declOfNum } from '@/shared/helpers'
 import { type TypeIngredient, useIngredients} from '@/entities/ingredients'
-import { useSelectedIngredients } from '@/entities/selectedIngredients'
+import { useSelectedIngredients } from '@/entities/selected-ingredients'
 import IngredientLineItem from './IngredientLineItem/IngredientLineItem.vue'
 
 const ingredients = useIngredients()

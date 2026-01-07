@@ -8,7 +8,7 @@
 
 <script lang="ts" setup>
 import { DateTime } from 'luxon'
-import { ThemeToggleButton } from '@/features/themeToggle'
+import { ThemeToggleButton } from '@/features/theme-toggle'
 
 const getCurrentYear = () => {
   const { year } = DateTime

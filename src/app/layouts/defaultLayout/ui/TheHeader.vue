@@ -36,7 +36,7 @@
 
 <script lang="ts" setup>
 import { ROUTE_NAMES } from '@/shared/constants'
-import { ThemeToggleButton } from '@/features/themeToggle'
+import { ThemeToggleButton } from '@/features/theme-toggle'
 import TheLogo from './TheLogo.vue'
 </script>
 

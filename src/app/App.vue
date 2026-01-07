@@ -7,8 +7,8 @@
 </template>
 
 <script lang="ts" setup>
-import { useWelcomePopup } from '@/entities/welcomePopup'
-import { WelcomePopup } from '@/features/welcomePopup'
+import { useWelcomePopup } from '@/entities/welcome-popup'
+import { WelcomePopup } from '@/features/welcome-popup'
 
 const welcomePopup = useWelcomePopup()
 </script>
