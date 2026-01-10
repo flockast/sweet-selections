@@ -1,5 +1,18 @@
+<script lang="ts" setup>
+type TypeProps = {
+  disabled?: boolean
+}
+
+withDefaults(defineProps<TypeProps>(), {
+  disabled: false
+})
+</script>
+
 <template>
-  <button class="the-button">
+  <button
+    class="the-button"
+    :disabled="disabled"
+  >
     <slot/>
   </button>
 </template>
@@ -24,6 +37,12 @@
 
   &:hover {
     opacity: 1;
+  }
+
+  &[disabled] {
+    cursor: default;
+    opacity: .5;
+    pointer-events: none;
   }
 }
 </style>

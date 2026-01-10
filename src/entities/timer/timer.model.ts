@@ -78,7 +78,7 @@ export const useTimer = () => {
     }, ONE_SECOND_IN_MILLIS)
   }
 
-  const start = (payload: { hour: number, minute: number }) => {
+  const start = (payload: { hour: number, minute: number, second: number }) => {
     const current = getCurrentMillis()
     updateStartTime(current)
     updateFinishTime(current + convertObjectToMillis(payload))

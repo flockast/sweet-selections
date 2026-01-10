@@ -13,10 +13,7 @@
       v-if="showDrop"
       class="timer__drop"
     >
-      <TimerDrop
-        @start="close"
-        @stop="close"
-      />
+      <TimerDrop />
     </div>
   </div>
 </template>
@@ -73,7 +70,7 @@ useEvent(document, 'keydown', (event) => {
     position: absolute;
     top: 5.4rem;
     right: 0;
-    width: 15rem;
+    width: 32rem;
   }
 }
 </style>
