@@ -1,5 +1,17 @@
-import { DateTime } from 'luxon'
-import { DATE_TIME_NO_SECONDS_FORMAT } from '@/shared/constants'
+import { DateTime, Duration, type DurationLikeObject } from 'luxon'
+import { DATE_TIME_FORMAT, DATE_TIME_NO_SECONDS_FORMAT } from '@/shared/constants'
+
+export const convertObjectToMillis = (payload: DurationLikeObject) => {
+  return Duration.fromObject(payload).as('milliseconds')
+}
+
+export const convertMillisToFormat = (ms: number, format = DATE_TIME_FORMAT) => {
+  return Duration.fromMillis(ms).toFormat(format)
+}
+
+export const getCurrentMillis = () => {
+  return DateTime.now().set({ millisecond: 0 }).toMillis()
+}
 
 export const fromJSDateToISO = (dateTimeJSDate: Date) => {
   return DateTime.fromJSDate(dateTimeJSDate)

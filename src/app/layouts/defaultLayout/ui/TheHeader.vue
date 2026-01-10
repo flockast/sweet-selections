@@ -28,6 +28,9 @@
     </nav>
     <div class="header__actions">
       <div>
+        <TheTimer />
+      </div>
+      <div>
         <ThemeToggleButton color="#8b8b8b" />
       </div>
     </div>
@@ -37,6 +40,7 @@
 <script lang="ts" setup>
 import { ROUTE_NAMES } from '@/shared/constants'
 import { ThemeToggleButton } from '@/features/theme-toggle'
+import { TheTimer } from '@/features/timer'
 import TheLogo from './TheLogo.vue'
 </script>
 
@@ -97,6 +101,7 @@ import TheLogo from './TheLogo.vue'
   &__actions {
     display: flex;
     align-items: center;
+    gap: 1.5rem;
     margin-left: 3rem;
   }
 }

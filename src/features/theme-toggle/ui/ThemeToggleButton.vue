@@ -97,6 +97,7 @@ const theme = useTheme()
   }
 }
 .theme-toggle {
+  display: block;
   padding: 0;
   margin: 0;
   width: var(--toggle-size);
