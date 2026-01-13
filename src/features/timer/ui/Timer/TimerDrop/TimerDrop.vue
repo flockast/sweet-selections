@@ -50,6 +50,7 @@ const handleClickStart = () => {
       </div>
       <TheButton
         :disabled="buttonDisabled"
+        variant="outline"
         @click.prevent="handleClickStart"
       >
         Старт

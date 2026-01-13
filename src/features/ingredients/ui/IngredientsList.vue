@@ -20,7 +20,7 @@
           :key="ingredient.id"
           :item="ingredient"
           :is-active="selectedIngredients.has(ingredient.id)"
-          @click="  selectedIngredients.toggle(ingredient.id)"
+          @click="selectedIngredients.toggle(ingredient.id)"
         />
       </div>
       <TheNoData v-else />

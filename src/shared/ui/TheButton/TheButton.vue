@@ -1,16 +1,19 @@
 <script lang="ts" setup>
 type TypeProps = {
   disabled?: boolean
+  variant?: 'outline' | 'default'
 }
 
 withDefaults(defineProps<TypeProps>(), {
-  disabled: false
+  disabled: false,
+  variant: 'default'
 })
 </script>
 
 <template>
   <button
     class="the-button"
+    :class="`the-button--${variant}`"
     :disabled="disabled"
   >
     <slot/>
@@ -23,16 +26,23 @@ withDefaults(defineProps<TypeProps>(), {
   width: 100%;
   margin: 0;
   border: none;
+  background: none;
   border-radius: var(--border-radius);
-  background: var(--cl-button-bg);
   color: white;
   padding: 1.5rem;
   box-shadow: none;
   cursor: pointer;
-  transition: opacity .2s ease-in-out, transform .2s ease-in-out;
+
+  &--default {
+    background: var(--cl-button-bg);
+  }
+
+  &--outline {
+    box-shadow: 0 0 0 1px var(--cl-border);
+  }
 
   &:active {
-    transform: scale(.95);
+    transform: translateY(1px);
   }
 
   &:hover {

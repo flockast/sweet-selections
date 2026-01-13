@@ -41,7 +41,7 @@ import { ROUTE_NAMES } from '@/shared/constants'
 import { TheBox, TheButtonLink, TheNoData, IconArrow } from '@/shared/ui'
 import { type TypeDish, useDishes } from '@/entities/dishes'
 import { useSelectedIngredients } from '@/entities/selected-ingredients'
-import { useIngredients } from '@/entities/ingredients'
+import { useIngredients, type TypeIngredient } from '@/entities/ingredients'
 import DishCardItem from './DishCardItem/DishCardItem.vue'
 
 const dishes = useDishes()
@@ -49,14 +49,14 @@ const ingredients = useIngredients()
 const selectedIngredients = useSelectedIngredients()
 
 const selectedDishes = computed(() => dishes.state.list.filter((dish) => {
-  return dish.criticalIngredients.every((id) => selectedIngredients.state.list.includes(id))
+  return dish.criticalIngredients.some((id) => selectedIngredients.state.list.includes(id))
 }))
 
 const getOptionalsIngredients = (dish: TypeDish) => {
-  return dish.ingredients
-    .filter((item) => !selectedIngredients.has(item.id))
-    .map((item) => ingredients.getItem(item.id))
-    .filter((item): item is TypeDish => Boolean(item))
+  return [...new Set([...dish.ingredients.map((item) => item.id)])]
+    .filter((id) => !selectedIngredients.has(id))
+    .map((id) => ingredients.getItem(id))
+    .filter((item): item is TypeIngredient => Boolean(item))
     .map((item) => item.name.toLowerCase())
 }
 </script>

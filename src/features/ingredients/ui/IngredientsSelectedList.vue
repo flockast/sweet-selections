@@ -32,7 +32,7 @@
         />
       </div>
       <div
-        v-if="countSelected > 1"
+        v-if="countSelected >= 1"
         class="selected-ingredients__footer"
       >
         <TheButtonLink

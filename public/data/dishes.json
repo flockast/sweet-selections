@@ -19,7 +19,9 @@
     ],
     "criticalIngredients": [1, 4, 30],
     "cookingTime": 60,
-    "servings": 6
+    "servings": 6,
+    "caloriesPerServing": 280,
+    "tags": [6, 5, 12]
   },
   {
     "id": 2,
@@ -42,7 +44,9 @@
     ],
     "criticalIngredients": [24, 25, 4],
     "cookingTime": 40,
-    "servings": 8
+    "servings": 8,
+    "caloriesPerServing": 350,
+    "tags": [2, 8, 9]
   },
   {
     "id": 3,
@@ -64,7 +68,9 @@
     ],
     "criticalIngredients": [1, 5, 4],
     "cookingTime": 50,
-    "servings": 4
+    "servings": 4,
+    "caloriesPerServing": 180,
+    "tags": [5, 10, 6]
   },
   {
     "id": 4,
@@ -88,7 +94,9 @@
     ],
     "criticalIngredients": [1, 7, 4, 14],
     "cookingTime": 90,
-    "servings": 10
+    "servings": 10,
+    "caloriesPerServing": 380,
+    "tags": [2, 1, 4]
   },
   {
     "id": 5,
@@ -110,7 +118,9 @@
     ],
     "criticalIngredients": [8, 1, 4],
     "cookingTime": 30,
-    "servings": 4
+    "servings": 4,
+    "caloriesPerServing": 250,
+    "tags": [11, 5, 6]
   },
   {
     "id": 6,
@@ -132,7 +142,9 @@
     ],
     "criticalIngredients": [13, 5, 4],
     "cookingTime": 25,
-    "servings": 4
+    "servings": 4,
+    "caloriesPerServing": 320,
+    "tags": [9, 2, 24]
   },
   {
     "id": 7,
@@ -153,7 +165,9 @@
     ],
     "criticalIngredients": [23, 22],
     "cookingTime": 20,
-    "servings": 6
+    "servings": 6,
+    "caloriesPerServing": 280,
+    "tags": [8, 9, 5]
   },
   {
     "id": 8,
@@ -177,7 +191,9 @@
     ],
     "criticalIngredients": [1, 4, 27],
     "cookingTime": 40,
-    "servings": 8
+    "servings": 8,
+    "caloriesPerServing": 220,
+    "tags": [5, 10, 13]
   },
   {
     "id": 9,
@@ -198,7 +214,9 @@
     ],
     "criticalIngredients": [8, 4, 7],
     "cookingTime": 60,
-    "servings": 6
+    "servings": 6,
+    "caloriesPerServing": 210,
+    "tags": [11, 18, 6, 27]
   },
   {
     "id": 10,
@@ -221,7 +239,9 @@
     ],
     "criticalIngredients": [13, 5, 4],
     "cookingTime": 45,
-    "servings": 8
+    "servings": 8,
+    "caloriesPerServing": 340,
+    "tags": [26, 2, 10]
   },
   {
     "id": 11,
@@ -241,7 +261,9 @@
     ],
     "criticalIngredients": [23, 6],
     "cookingTime": 360,
-    "servings": 6
+    "servings": 6,
+    "caloriesPerServing": 260,
+    "tags": [6, 14, 12]
   },
   {
     "id": 12,
@@ -264,7 +286,9 @@
     ],
     "criticalIngredients": [31, 25, 4, 27],
     "cookingTime": 90,
-    "servings": 8
+    "servings": 8,
+    "caloriesPerServing": 380,
+    "tags": [1, 2, 13]
   },
   {
     "id": 13,
@@ -286,7 +310,9 @@
     ],
     "criticalIngredients": [1, 5, 4, 17],
     "cookingTime": 35,
-    "servings": 6
+    "servings": 6,
+    "caloriesPerServing": 190,
+    "tags": [5, 10, 18, 27]
   },
   {
     "id": 14,
@@ -308,7 +334,9 @@
     ],
     "criticalIngredients": [1, 4, 6],
     "cookingTime": 60,
-    "servings": 12
+    "servings": 12,
+    "caloriesPerServing": 200,
+    "tags": [24, 2, 9]
   },
   {
     "id": 15,
@@ -332,7 +360,9 @@
     ],
     "criticalIngredients": [4, 1, 7],
     "cookingTime": 60,
-    "servings": 8
+    "servings": 8,
+    "caloriesPerServing": 290,
+    "tags": [5, 12, 10]
   },
   {
     "id": 16,
@@ -353,7 +383,9 @@
     ],
     "criticalIngredients": [13, 23],
     "cookingTime": 40,
-    "servings": 20
+    "servings": 20,
+    "caloriesPerServing": 120,
+    "tags": [2, 15, 9, 27]
   },
   {
     "id": 17,
@@ -374,7 +406,9 @@
     ],
     "criticalIngredients": [4, 23],
     "cookingTime": 50,
-    "servings": 6
+    "servings": 6,
+    "caloriesPerServing": 310,
+    "tags": [24, 9, 2]
   },
   {
     "id": 18,
@@ -399,7 +433,9 @@
     ],
     "criticalIngredients": [1, 14, 4],
     "cookingTime": 75,
-    "servings": 15
+    "servings": 15,
+    "caloriesPerServing": 160,
+    "tags": [15, 6, 10, 27]
   },
   {
     "id": 19,
@@ -417,7 +453,9 @@
     ],
     "criticalIngredients": [13, 4],
     "cookingTime": 30,
-    "servings": 4
+    "servings": 4,
+    "caloriesPerServing": 240,
+    "tags": [5, 7, 9]
   },
   {
     "id": 20,
@@ -439,7 +477,9 @@
     ],
     "criticalIngredients": [38, 25, 23],
     "cookingTime": 45,
-    "servings": 10
+    "servings": 10,
+    "caloriesPerServing": 390,
+    "tags": [1, 2, 26]
   },
   {
     "id": 21,
@@ -458,7 +498,9 @@
     ],
     "criticalIngredients": [4],
     "cookingTime": 150,
-    "servings": 15
+    "servings": 15,
+    "caloriesPerServing": 80,
+    "tags": [5, 10, 24, 27]
   },
   {
     "id": 22,
@@ -481,7 +523,9 @@
     ],
     "criticalIngredients": [5, 4, 1],
     "cookingTime": 70,
-    "servings": 8
+    "servings": 8,
+    "caloriesPerServing": 310,
+    "tags": [5, 10, 12]
   },
   {
     "id": 23,
@@ -505,7 +549,9 @@
     ],
     "criticalIngredients": [5, 4, 1, 38],
     "cookingTime": 90,
-    "servings": 10
+    "servings": 10,
+    "caloriesPerServing": 400,
+    "tags": [1, 2, 26]
   },
   {
     "id": 24,
@@ -525,7 +571,9 @@
     ],
     "criticalIngredients": [25, 5],
     "cookingTime": 25,
-    "servings": 12
+    "servings": 12,
+    "caloriesPerServing": 180,
+    "tags": [6, 5, 10, 27]
   },
   {
     "id": 25,
@@ -545,7 +593,9 @@
     ],
     "criticalIngredients": [22, 27, 30],
     "cookingTime": 20,
-    "servings": 6
+    "servings": 6,
+    "caloriesPerServing": 120,
+    "tags": [5, 13, 14, 27]
   },
   {
     "id": 26,
@@ -567,7 +617,9 @@
     ],
     "criticalIngredients": [1, 5, 30],
     "cookingTime": 45,
-    "servings": 8
+    "servings": 8,
+    "caloriesPerServing": 280,
+    "tags": [5, 12, 10]
   },
   {
     "id": 27,
@@ -589,7 +641,9 @@
     ],
     "criticalIngredients": [1, 15, 14],
     "cookingTime": 90,
-    "servings": 15
+    "servings": 15,
+    "caloriesPerServing": 350,
+    "tags": [25, 2, 3]
   },
   {
     "id": 28,
@@ -611,7 +665,9 @@
     ],
     "criticalIngredients": [1, 4, 6],
     "cookingTime": 120,
-    "servings": 10
+    "servings": 10,
+    "caloriesPerServing": 290,
+    "tags": [6, 10, 12]
   },
   {
     "id": 29,
@@ -633,7 +689,9 @@
     ],
     "criticalIngredients": [24, 25, 23],
     "cookingTime": 20,
-    "servings": 4
+    "servings": 4,
+    "caloriesPerServing": 320,
+    "tags": [5, 7, 8]
   },
   {
     "id": 30,
@@ -654,7 +712,9 @@
     ],
     "criticalIngredients": [1, 5],
     "cookingTime": 30,
-    "servings": 6
+    "servings": 6,
+    "caloriesPerServing": 170,
+    "tags": [5, 10, 7, 27]
   },
   {
     "id": 31,
@@ -678,7 +738,9 @@
     ],
     "criticalIngredients": [8, 4, 1],
     "cookingTime": 30,
-    "servings": 4
+    "servings": 4,
+    "caloriesPerServing": 240,
+    "tags": [11, 5, 6]
   },
   {
     "id": 32,
@@ -703,7 +765,9 @@
     ],
     "criticalIngredients": [1, 4, 6],
     "cookingTime": 40,
-    "servings": 4
+    "servings": 4,
+    "caloriesPerServing": 280,
+    "tags": [6, 11, 12]
   },
   {
     "id": 33,
@@ -726,7 +790,9 @@
     ],
     "criticalIngredients": [13, 5, 4, 1],
     "cookingTime": 40,
-    "servings": 8
+    "servings": 8,
+    "caloriesPerServing": 270,
+    "tags": [5, 7, 10]
   },
   {
     "id": 34,
@@ -748,7 +814,9 @@
     ],
     "criticalIngredients": [27, 28, 30, 23],
     "cookingTime": 20,
-    "servings": 4
+    "servings": 4,
+    "caloriesPerServing": 150,
+    "tags": [13, 14, 5, 27]
   },
   {
     "id": 35,
@@ -770,7 +838,9 @@
     ],
     "criticalIngredients": [8, 5, 1],
     "cookingTime": 35,
-    "servings": 6
+    "servings": 6,
+    "caloriesPerServing": 210,
+    "tags": [5, 10, 18]
   },
   {
     "id": 36,
@@ -790,7 +860,9 @@
     ],
     "criticalIngredients": [27, 28, 6],
     "cookingTime": 10,
-    "servings": 2
+    "servings": 2,
+    "caloriesPerServing": 140,
+    "tags": [14, 18, 19, 27]
   },
   {
     "id": 37,
@@ -814,7 +886,9 @@
     ],
     "criticalIngredients": [30, 1, 5],
     "cookingTime": 60,
-    "servings": 8
+    "servings": 8,
+    "caloriesPerServing": 260,
+    "tags": [13, 12, 10]
   },
   {
     "id": 38,
@@ -839,14 +913,16 @@
     ],
     "criticalIngredients": [1, 4, 6],
     "cookingTime": 45,
-    "servings": 4
+    "servings": 4,
+    "caloriesPerServing": 250,
+    "tags": [6, 11, 12]
   },
   {
     "id": 39,
     "name": "Круассан классический",
     "description": "Французский слоеный круассан с маслянистой текстурой.",
     "recipe": [
-      "Замесить тесто из муки, молока, дрожжей, сахара и соли",
+      "Замесить тесто из муки, молока, дрожжей, сахар и соли",
       "Вложить охлажденное сливочное масло, сложить тесто конвертом",
       "Раскатать, сложить втрое и убрать в холод на 30 минут",
       "Повторить раскатывание и складывание 4 раза",
@@ -864,7 +940,9 @@
     ],
     "criticalIngredients": [1, 5, 6],
     "cookingTime": 240,
-    "servings": 12
+    "servings": 12,
+    "caloriesPerServing": 280,
+    "tags": [24, 3, 11]
   },
   {
     "id": 40,
@@ -889,7 +967,9 @@
     ],
     "criticalIngredients": [1, 5, 23],
     "cookingTime": 240,
-    "servings": 10
+    "servings": 10,
+    "caloriesPerServing": 310,
+    "tags": [24, 3, 11]
   },
   {
     "id": 41,
@@ -914,7 +994,9 @@
     ],
     "criticalIngredients": [1, 5, 13],
     "cookingTime": 240,
-    "servings": 10
+    "servings": 10,
+    "caloriesPerServing": 320,
+    "tags": [24, 3, 11]
   },
   {
     "id": 42,
@@ -939,7 +1021,9 @@
     ],
     "criticalIngredients": [23, 22, 27],
     "cookingTime": 30,
-    "servings": 6
+    "servings": 6,
+    "caloriesPerServing": 270,
+    "tags": [8, 9, 13]
   },
   {
     "id": 43,
@@ -963,7 +1047,9 @@
     ],
     "criticalIngredients": [23, 22, 36],
     "cookingTime": 25,
-    "servings": 6
+    "servings": 6,
+    "caloriesPerServing": 260,
+    "tags": [8, 9, 5]
   },
   {
     "id": 44,
@@ -992,7 +1078,9 @@
     ],
     "criticalIngredients": [1, 4, 5, 17],
     "cookingTime": 300,
-    "servings": 10
+    "servings": 10,
+    "caloriesPerServing": 330,
+    "tags": [15, 8, 13]
   },
   {
     "id": 45,
@@ -1020,6 +1108,341 @@
     ],
     "criticalIngredients": [1, 4, 5, 13, 15],
     "cookingTime": 280,
-    "servings": 12
+    "servings": 12,
+    "caloriesPerServing": 350,
+    "tags": [15, 8, 10]
+  },
+  {
+    "id": 46,
+    "name": "Торт Наполеон",
+    "description": "Классический слоеный торт с нежным заварным кремом.",
+    "recipe": [
+      "Приготовить слоеное тесто, раскатать в тонкие пласты",
+      "Выпекать коржи до золотистого цвета при 200°C",
+      "Приготовить заварной крем из молока, яиц, сахара и муки",
+      "Каждый остывший корж промазать кремом",
+      "Посыпать верх и бока крошкой из обрезков коржей",
+      "Дать пропитаться в холодильнике 8-12 часов"
+    ],
+    "ingredients": [
+      {"id": 1, "name": "Мука пшеничная", "amount": "800г"},
+      {"id": 5, "name": "Масло сливочное", "amount": "400г"},
+      {"id": 6, "name": "Молоко", "amount": "1л"},
+      {"id": 4, "name": "Яйца куриные", "amount": "6 шт"},
+      {"id": 2, "name": "Сахар", "amount": "300г"},
+      {"id": 11, "name": "Ванилин", "amount": "2 ч.л."},
+      {"id": 46, "name": "Сметана для крема", "amount": "200г"}
+    ],
+    "criticalIngredients": [1, 5, 6, 4],
+    "cookingTime": 180,
+    "servings": 12,
+    "caloriesPerServing": 420,
+    "tags": [1, 2, 3, 4]
+  },
+  {
+    "id": 47,
+    "name": "Графские развалины",
+    "description": "Быстрый торт из печенья со сметанным кремом и орехами.",
+    "recipe": [
+      "Печенье поломать на крупные куски",
+      "Приготовить крем: взбить сметану с сахаром и ванилином",
+      "Смешать печенье с кремом и измельченными орехами",
+      "Выложить массу в форму, сформировав «развалины»",
+      "Посыпать крошкой из печенья и орехами",
+      "Охладить в холодильнике 4-6 часов"
+    ],
+    "ingredients": [
+      {"id": 25, "name": "Печенье сахарное", "amount": "500г"},
+      {"id": 7, "name": "Сметана", "amount": "600г"},
+      {"id": 2, "name": "Сахар", "amount": "200г"},
+      {"id": 15, "name": "Орехи грецкие", "amount": "200г"},
+      {"id": 11, "name": "Ванилин", "amount": "1 ч.л."}
+    ],
+    "criticalIngredients": [25, 7, 15],
+    "cookingTime": 30,
+    "servings": 10,
+    "caloriesPerServing": 380,
+    "tags": [5, 6, 7]
+  },
+  {
+    "id": 48,
+    "name": "Торт Прага",
+    "description": "Шоколадный бисквитный торт с абрикосовым джемом и шоколадным кремом.",
+    "recipe": [
+      "Испечь шоколадные бисквитные коржи",
+      "Приготовить шоколадный крем на основе сливочного масла и сгущенки",
+      "Пропитать коржи коньяком",
+      "Промазать коржи абрикосовым джемом и шоколадным кремом",
+      "Покрыть торт шоколадной глазурью",
+      "Украсить орехами и цукатами"
+    ],
+    "ingredients": [
+      {"id": 1, "name": "Мука пшеничная", "amount": "300г"},
+      {"id": 4, "name": "Яйца куриные", "amount": "6 шт"},
+      {"id": 13, "name": "Шоколад черный", "amount": "200г"},
+      {"id": 45, "name": "Сгущенное молоко", "amount": "400г"},
+      {"id": 5, "name": "Масло сливочное", "amount": "300г"},
+      {"id": 47, "name": "Коньяк", "amount": "50мл"},
+      {"id": 49, "name": "Абрикосы", "amount": "200г"},
+      {"id": 48, "name": "Орехи для декора", "amount": "100г"},
+      {"id": 12, "name": "Какао-порошок", "amount": "50г"}
+    ],
+    "criticalIngredients": [1, 4, 13, 45],
+    "cookingTime": 120,
+    "servings": 10,
+    "caloriesPerServing": 480,
+    "tags": [1, 2, 3, 4]
+  },
+  {
+    "id": 49,
+    "name": "Торт Полет",
+    "description": "Воздушный торт из безе, орехов и сливочного крема.",
+    "recipe": [
+      "Приготовить безе из яичных белков и сахара",
+      "Добавить в безе измельченные орехи",
+      "Испечь безе коржи при низкой температуре",
+      "Приготовить масляно-сливочный крем",
+      "Собрать торт, чередуя коржи и крем",
+      "Украсить целыми орехами"
+    ],
+    "ingredients": [
+      {"id": 4, "name": "Яйца куриные", "amount": "8 белков"},
+      {"id": 2, "name": "Сахар", "amount": "400г"},
+      {"id": 15, "name": "Орехи грецкие", "amount": "300г"},
+      {"id": 5, "name": "Масло сливочное", "amount": "300г"},
+      {"id": 45, "name": "Сгущенное молоко", "amount": "200г"},
+      {"id": 11, "name": "Ванилин", "amount": "2 ч.л."}
+    ],
+    "criticalIngredients": [4, 15, 45],
+    "cookingTime": 150,
+    "servings": 10,
+    "caloriesPerServing": 450,
+    "tags": [1, 2, 3]
+  },
+  {
+    "id": 50,
+    "name": "Торт Сказка",
+    "description": "Нежный бисквитный торт с фруктовой прослойкой и кремом.",
+    "recipe": [
+      "Испечь бисквитные коржи",
+      "Приготовить заварной крем",
+      "Нарезать фрукты (персики, абрикосы, виноград)",
+      "Промазать коржи кремом, выкладывая слои фруктов",
+      "Покрыть торт кремом и украсить свежими фруктами"
+    ],
+    "ingredients": [
+      {"id": 1, "name": "Мука пшеничная", "amount": "350г"},
+      {"id": 4, "name": "Яйца куриные", "amount": "5 шт"},
+      {"id": 2, "name": "Сахар", "amount": "300г"},
+      {"id": 6, "name": "Молоко", "amount": "500мл"},
+      {"id": 5, "name": "Масло сливочное", "amount": "200г"},
+      {"id": 49, "name": "Абрикосы", "amount": "200г"},
+      {"id": 50, "name": "Персики", "amount": "200г"},
+      {"id": 52, "name": "Виноград", "amount": "150г"},
+      {"id": 11, "name": "Ванилин", "amount": "2 ч.л."}
+    ],
+    "criticalIngredients": [1, 4, 6, 49],
+    "cookingTime": 90,
+    "servings": 10,
+    "caloriesPerServing": 350,
+    "tags": [1, 2, 13, 14]
+  },
+  {
+    "id": 51,
+    "name": "Шоколадная колбаса",
+    "description": "Любимый с детства десерт из печенья, масла и какао.",
+    "recipe": [
+      "Измельчить печенье в крошку",
+      "Растопить сливочное масло с сахаром и какао",
+      "Смешать печенье с орехами и растопленной массой",
+      "Сформировать колбаску, завернуть в пищевую пленку",
+      "Охладить в холодильнике 4-6 часов",
+      "Нарезать ломтиками перед подачей"
+    ],
+    "ingredients": [
+      {"id": 25, "name": "Печенье сахарное", "amount": "500г"},
+      {"id": 5, "name": "Масло сливочное", "amount": "200г"},
+      {"id": 2, "name": "Сахар", "amount": "150г"},
+      {"id": 12, "name": "Какао-порошок", "amount": "4 ст.л."},
+      {"id": 15, "name": "Орехи грецкие", "amount": "100г"},
+      {"id": 6, "name": "Молоко", "amount": "100мл"}
+    ],
+    "criticalIngredients": [25, 5, 12],
+    "cookingTime": 25,
+    "servings": 8,
+    "caloriesPerServing": 320,
+    "tags": [6, 5, 7, 15]
+  },
+  {
+    "id": 52,
+    "name": "Орешки со сгущенкой",
+    "description": "Хрустящие вафельные орешки с вареной сгущенкой.",
+    "recipe": [
+      "Приготовить тесто для орешков из муки, яиц, сметаны и сахара",
+      "Выпекать в форме для орешков до золотистого цвета",
+      "Соединить две половинки орешков вареной сгущенкой",
+      "Дать орешкам немного пропитаться"
+    ],
+    "ingredients": [
+      {"id": 1, "name": "Мука пшеничная", "amount": "400г"},
+      {"id": 4, "name": "Яйца куриные", "amount": "3 шт"},
+      {"id": 7, "name": "Сметана", "amount": "200г"},
+      {"id": 2, "name": "Сахар", "amount": "150г"},
+      {"id": 5, "name": "Масло сливочное", "amount": "100г"},
+      {"id": 45, "name": "Сгущенное молоко", "amount": "400г"}
+    ],
+    "criticalIngredients": [1, 4, 45],
+    "cookingTime": 60,
+    "servings": 30,
+    "caloriesPerServing": 180,
+    "tags": [6, 15, 2]
+  },
+  {
+    "id": 53,
+    "name": "Фруктовый салат «Радуга»",
+    "description": "Яркий витаминный салат из сезонных фруктов с йогуртовой заправкой.",
+    "recipe": [
+      "Все фрукты вымыть, очистить от кожуры",
+      "Нарезать фрукты кубиками примерно одинакового размера",
+      "Виноград разрезать пополам и удалить косточки",
+      "Сложить все фрукты в большую миску",
+      "Заправить натуральным йогуртом или сметаной с сахаром",
+      "Аккуратно перемешать, украсить листиками мяты"
+    ],
+    "ingredients": [
+      {"id": 49, "name": "Абрикосы", "amount": "3 шт"},
+      {"id": 50, "name": "Персики", "amount": "2 шт"},
+      {"id": 51, "name": "Груши", "amount": "2 шт"},
+      {"id": 30, "name": "Яблоко", "amount": "2 шт"},
+      {"id": 53, "name": "Апельсины", "amount": "1 шт"},
+      {"id": 54, "name": "Мандарины", "amount": "2 шт"},
+      {"id": 55, "name": "Киви", "amount": "2 шт"},
+      {"id": 28, "name": "Банан", "amount": "1 шт"},
+      {"id": 52, "name": "Виноград", "amount": "200г"},
+      {"id": 7, "name": "Сметана", "amount": "150г"},
+      {"id": 2, "name": "Сахар", "amount": "3 ст.л."}
+    ],
+    "criticalIngredients": [49, 50, 51, 53],
+    "cookingTime": 20,
+    "servings": 6,
+    "caloriesPerServing": 120,
+    "tags": [14, 18, 19, 5, 27]
+  },
+  {
+    "id": 54,
+    "name": "Экзотический фруктовый тарт",
+    "description": "Хрустящая песочная основа с заварным кремом и экзотическими фруктами.",
+    "recipe": [
+      "Приготовить песочное тесто, выложить в форму, испечь «вслепую»",
+      "Приготовить ванильный заварной крем",
+      "Выложить крем в остывшую основу",
+      "Украсить нарезанными экзотическими фруктами",
+      "Смазать фрукты желе для блеска"
+    ],
+    "ingredients": [
+      {"id": 1, "name": "Мука пшеничная", "amount": "250г"},
+      {"id": 5, "name": "Масло сливочное", "amount": "150г"},
+      {"id": 2, "name": "Сахар", "amount": "100г"},
+      {"id": 4, "name": "Яйца куриные", "amount": "2 шт"},
+      {"id": 6, "name": "Молоко", "amount": "500мл"},
+      {"id": 55, "name": "Киви", "amount": "2 шт"},
+      {"id": 56, "name": "Ананас", "amount": "200г"},
+      {"id": 53, "name": "Апельсины", "amount": "1 шт"},
+      {"id": 54, "name": "Мандарины", "amount": "2 шт"},
+      {"id": 11, "name": "Ванилин", "amount": "1 ч.л."}
+    ],
+    "criticalIngredients": [1, 5, 4, 6, 55],
+    "cookingTime": 70,
+    "servings": 8,
+    "caloriesPerServing": 280,
+    "tags": [2, 20, 14, 21]
+  },
+  {
+    "id": 55,
+    "name": "Ягодный пай с ванильным мороженым",
+    "description": "Теплый пирог с ягодной начинкой и шариком ванильного мороженого.",
+    "recipe": [
+      "Приготовить песочное тесто, разделить на 2 части",
+      "Раскатать основу, выложить в форму, сделать бортики",
+      "Выложить смесь ягод (клубника, малина, черника, ежевика) с сахаром",
+      "Накрыть второй частью теста, защипнуть края",
+      "Сделать надрезы сверху для выхода пара",
+      "Выпекать 35-40 минут при 180°C",
+      "Подавать теплым с шариком ванильного мороженого"
+    ],
+    "ingredients": [
+      {"id": 1, "name": "Мука пшеничная", "amount": "400г"},
+      {"id": 5, "name": "Масло сливочное", "amount": "250г"},
+      {"id": 2, "name": "Сахар", "amount": "200г"},
+      {"id": 4, "name": "Яйца куриные", "amount": "1 шт"},
+      {"id": 27, "name": "Ягоды (клубника/малина)", "amount": "300г"},
+      {"id": 58, "name": "Черника", "amount": "150г"},
+      {"id": 59, "name": "Ежевика", "amount": "150г"},
+      {"id": 35, "name": "Соль", "amount": "щепотка"},
+      {"id": 11, "name": "Ванилин", "amount": "1 ч.л."}
+    ],
+    "criticalIngredients": [1, 5, 27, 58],
+    "cookingTime": 60,
+    "servings": 8,
+    "caloriesPerServing": 320,
+    "tags": [14, 22, 2, 23]
+  },
+  {
+    "id": 56,
+    "name": "Торт «Новогодняя елка»",
+    "description": "Праздничный торт в форме елки с шоколадным бисквитом и сливочным кремом.",
+    "recipe": [
+      "Испечь шоколадные бисквитные коржи в прямоугольной форме",
+      "Вырезать из коржей треугольники разного размера (ярусы елки)",
+      "Приготовить сливочный крем, окрасить часть в зеленый цвет",
+      "Собрать елку, промазывая ярусы кремом",
+      "Украсить «игрушками» из цукатов, орехов и ягод",
+      "Посыпать «снегом» из сахарной пудры"
+    ],
+    "ingredients": [
+      {"id": 1, "name": "Мука пшеничная", "amount": "300г"},
+      {"id": 4, "name": "Яйца куриные", "amount": "5 шт"},
+      {"id": 13, "name": "Шоколад черный", "amount": "150г"},
+      {"id": 2, "name": "Сахар", "amount": "250г"},
+      {"id": 5, "name": "Масло сливочное", "amount": "200г"},
+      {"id": 23, "name": "Сливки 33%", "amount": "300мл"},
+      {"id": 15, "name": "Орехи грецкие", "amount": "100г"},
+      {"id": 17, "name": "Изюм", "amount": "100г"},
+      {"id": 3, "name": "Сахарная пудра", "amount": "100г"},
+      {"id": 11, "name": "Ванилин", "amount": "2 ч.л."}
+    ],
+    "criticalIngredients": [1, 4, 13, 23],
+    "cookingTime": 120,
+    "servings": 10,
+    "caloriesPerServing": 400,
+    "tags": [15, 2, 17, 16]
+  },
+  {
+    "id": 57,
+    "name": "Вишневый клафути",
+    "description": "Французский десерт - нечто среднее между пирогом и запеканкой.",
+    "recipe": [
+      "Смазать форму сливочным маслом, выложить вишню",
+      "Взбить яйца с сахаром до пышности",
+      "Добавить муку, молоко, ваниль, соль",
+      "Залить вишню тестом",
+      "Выпекать 35-40 минут при 180°C до золотистой корочки",
+      "Подавать теплым, посыпав сахарной пудрой"
+    ],
+    "ingredients": [
+      {"id": 57, "name": "Вишня", "amount": "400г"},
+      {"id": 4, "name": "Яйца куриные", "amount": "3 шт"},
+      {"id": 1, "name": "Мука пшеничная", "amount": "100г"},
+      {"id": 6, "name": "Молоко", "amount": "250мл"},
+      {"id": 2, "name": "Сахар", "amount": "150г"},
+      {"id": 5, "name": "Масло сливочное", "amount": "30г"},
+      {"id": 11, "name": "Ванилин", "amount": "1 ч.л."},
+      {"id": 35, "name": "Соль", "amount": "щепотка"}
+    ],
+    "criticalIngredients": [57, 4, 1, 6],
+    "cookingTime": 50,
+    "servings": 6,
+    "caloriesPerServing": 220,
+    "tags": [14, 24, 5, 7, 27]
   }
 ]

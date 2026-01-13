@@ -33,6 +33,7 @@ const emit =defineEmits<TypeEmits>()
   position: relative;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 1.5rem;
   padding-left: 2.5rem;
 
@@ -55,18 +56,11 @@ const emit =defineEmits<TypeEmits>()
     background: none;
     outline: none;
     cursor: pointer;
-    color: var(--cl-danger);
-    opacity: 0;
+    color: var(--cl-text);
     transition: opacity .2s ease-in-out;
 
     &:active {
       transform: translateY(1px);
-    }
-  }
-
-  &:hover {
-    #{$root}__remove {
-      opacity: 1;
     }
   }
 }

@@ -31,10 +31,9 @@ defineProps<TypeProps>()
   padding: 1.5rem;
   box-shadow: none;
   cursor: pointer;
-  transition: opacity .2s ease-in-out, transform .2s ease-in-out;
 
   &:active {
-    transform: scale(.95);
+    transform: translateY(1px);
   }
 
   &:hover {
