@@ -11,4 +11,6 @@ export type TypeDish = {
   criticalIngredients: number[]
   cookingTime: number
   servings: number
+  caloriesPerServing: number
+  tags: number[]
 }
