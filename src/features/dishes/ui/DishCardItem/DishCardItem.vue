@@ -13,6 +13,17 @@
           :alt="item.name"
         >
       </div>
+      <ul
+        v-if="dishTags.length"
+        class="dish-card__tags"
+      >
+        <li
+          v-for="tag in dishTags"
+          :key="tag.id"
+        >
+          {{ tag.name }}
+        </li>
+      </ul>
       <div class="dish-card__name">{{ item.name }}</div>
       <div class="dish-card__desc">{{ item.description }}</div>
     </div>
@@ -46,6 +57,7 @@ import { type RouteLocationRaw } from 'vue-router'
 import { TheButtonLink, TheLike } from '@/shared/ui'
 import { type TypeDish } from '@/entities/dishes'
 import { useFavouriteDishes } from '@/entities/favourite-dishes'
+import { useTags, type TypeTag } from '@/entities/tags'
 
 type TypeProps = {
   item: TypeDish
@@ -56,10 +68,16 @@ type TypeProps = {
 const props = defineProps<TypeProps>()
 
 const favouriteDishes = useFavouriteDishes()
+const tags = useTags()
 
 const isFavourite = computed(() => {
   return favouriteDishes.state.list.includes(props.item.id)
 })
+
+const dishTags = computed(() => props.item.tags
+  .map((tagId) => tags.getItem(tagId))
+  .filter((tag): tag is TypeTag => Boolean(tag))
+)
 </script>
 
 <style lang="scss" scoped>
@@ -100,9 +118,26 @@ const isFavourite = computed(() => {
     right: 3rem;
   }
 
+  &__tags {
+    margin: 1.5rem 0 0 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem;
+
+    & > * {
+      background: var(--cl-border);
+      border-radius: 10px;
+      padding: .4rem .8rem;
+      white-space: nowrap;
+      font-size: 1.2rem;
+    }
+  }
+
   &__name {
     font-weight: bold;
-    margin-top: 1.5rem;
+    margin-top: 3rem;
   }
 
   &__desc {

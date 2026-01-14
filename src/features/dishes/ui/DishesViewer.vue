@@ -9,25 +9,38 @@
         </div>
         <div class="dish-viewer__title">{{ item.name }}</div>
       </div>
-      <div class="dish-viewer__desc">{{ item.description }}</div>
+      <div class="dish-viewer__cover">
+        <img
+          :src="`/images/dishes/${item.id}.jpg`"
+          :alt="item.name"
+        >
+      </div>
+      <ul
+        v-if="dishTags.length"
+        class="dish-viewer__tags"
+      >
+        <li
+          v-for="tag in dishTags"
+          :key="tag.id"
+        >
+          {{ tag.name }}
+        </li>
+      </ul>
       <div class="dish-viewer__metrics">
         <div class="dish-viewer__metric">
           <div class="dish-viewer__metric-icon"><IconClock /></div>
-          <div>Время приготовления: {{ item.cookingTime }}</div>
+          <div>Время приготовления {{ item.cookingTime }} мин.</div>
         </div>
         <div class="dish-viewer__metric">
           <div class="dish-viewer__metric-icon"><IconPerson /></div>
-          <div>Порции: {{ item.servings }}</div>
+          <div>{{ declOfNum(item.servings, ['порций', 'порции', 'порций'], true) }}</div>
+        </div>
+        <div class="dish-viewer__metric">
+          <div class="dish-viewer__metric-icon"><IconGym /></div>
+          <div>Одна порция {{ declOfNum(item.caloriesPerServing, ['калорий', 'калории', 'калорий'], true) }}</div>
         </div>
       </div>
-      <div class="dish-viewer__block">
-        <div class="dish-viewer__cover">
-          <img
-            :src="`/images/dishes/${item.id}.jpg`"
-            :alt="item.name"
-          >
-        </div>
-      </div>
+      <div class="dish-viewer__desc">{{ item.description }}</div>
       <div class="dish-viewer__block">
         <div class="dish-viewer__subtitle">Ингредиенты</div>
         <ul class="the-list">
@@ -41,7 +54,7 @@
       </div>
       <div class="dish-viewer__block">
         <div class="dish-viewer__subtitle">Инструкция по приготовлению</div>
-        <ul class="the-list">
+        <ul class="the-list the-list--none">
           <li
             v-for="(step, index) in item.recipe"
             :key="index"
@@ -57,10 +70,11 @@
 <script lang="ts" setup>
 import { computed } from 'vue'
 import { type RouteLocationRaw } from 'vue-router'
-import { IconArrow, TheBox, TheButtonLink } from '@/shared/ui'
+import { IconArrow, TheBox, TheButtonLink, IconClock, IconPerson, IconGym } from '@/shared/ui'
+import { declOfNum } from '@/shared/helpers'
 import { type TypeDish } from '@/entities/dishes'
-import { IconClock, IconPerson } from '@/shared/ui'
 import { useIngredients } from '@/entities/ingredients'
+import { useTags, type TypeTag } from '@/entities/tags'
 
 type TypeProps = {
   back: RouteLocationRaw
@@ -70,6 +84,7 @@ type TypeProps = {
 const props = defineProps<TypeProps>()
 
 const ingredients = useIngredients()
+const tags = useTags()
 
 const allIngredients = computed(() => {
   return props.item.ingredients.map((item) => ({
@@ -77,6 +92,11 @@ const allIngredients = computed(() => {
     amount: item.amount
   }))
 })
+
+const dishTags = computed(() => props.item.tags
+  .map((tagId) => tags.getItem(tagId))
+  .filter((tag): tag is TypeTag => Boolean(tag))
+)
 </script>
 
 <style lang="scss" scoped>
@@ -94,10 +114,11 @@ const allIngredients = computed(() => {
   }
 
   &__desc {
-    margin-bottom: 3rem;
+    margin-top: 3rem;
   }
 
   &__metrics {
+    margin-top: 3rem;
     display: flex;
     align-items: center;
     gap: 3rem;
@@ -111,6 +132,23 @@ const allIngredients = computed(() => {
 
   &__metric-icon {
     color: var(--cl-accent);
+  }
+
+  &__tags {
+    margin: 3rem 0 0 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .8rem;
+
+    & > * {
+      background: var(--cl-border);
+      border-radius: 10px;
+      padding: .4rem .8rem;
+      white-space: nowrap;
+      font-size: 1.6rem;
+    }
   }
 
   &__cover {
@@ -159,6 +197,16 @@ const allIngredients = computed(() => {
 
     &:not(:last-child) {
       margin-bottom: 1.5rem;
+    }
+  }
+
+  &--none {
+    li {
+      padding-left: 0;
+
+      &:before {
+        display: none;
+      }
     }
   }
 }
