@@ -13,12 +13,18 @@
         </div>
         <div class="dishes-selected__title">Ваши кондитерские творения</div>
       </div>
+      <div class="dishes-selected__filters">
+        <TheTapSelect
+          v-model="filterValue"
+          :options="filterOptions"
+        />
+      </div>
       <div
-        v-if="selectedDishes.length"
+        v-if="filteredSelectedDishes.length"
         class="dishes-selected__content"
       >
         <DishCardItem
-          v-for="dish in selectedDishes"
+          v-for="dish in filteredSelectedDishes"
           :key="dish.id"
           :item="dish"
           :optionals="getOptionalsIngredients(dish)"
@@ -36,21 +42,37 @@
 </template>
 
 <script lang="ts" setup>
-import { computed } from 'vue'
+import { ref, computed } from 'vue'
 import { ROUTE_NAMES } from '@/shared/constants'
-import { TheBox, TheButtonLink, TheNoData, IconArrow } from '@/shared/ui'
+import { TheBox, TheButtonLink, TheNoData, IconArrow, TheTapSelect } from '@/shared/ui'
 import { type TypeDish, useDishes } from '@/entities/dishes'
 import { useSelectedIngredients } from '@/entities/selected-ingredients'
 import { useIngredients, type TypeIngredient } from '@/entities/ingredients'
+import { useTags } from '@/entities/tags'
 import DishCardItem from './DishCardItem/DishCardItem.vue'
 
 const dishes = useDishes()
+const tags = useTags()
 const ingredients = useIngredients()
 const selectedIngredients = useSelectedIngredients()
+
+const filterValue = ref<number[]>([])
+
+const filterOptions = computed(() => tags.state.list.map((item) => ({
+  id: item.id,
+  label: item.name
+})))
 
 const selectedDishes = computed(() => dishes.state.list.filter((dish) => {
   return dish.criticalIngredients.some((id) => selectedIngredients.state.list.includes(id))
 }))
+
+const filteredSelectedDishes = computed(() => {
+  if (!filterValue.value.length) {
+    return selectedDishes.value
+  }
+  return selectedDishes.value.filter((item) => item.tags.some((tagId) => filterValue.value.includes(tagId)))
+})
 
 const getOptionalsIngredients = (dish: TypeDish) => {
   return [...new Set([...dish.ingredients.map((item) => item.id)])]
@@ -67,6 +89,10 @@ const getOptionalsIngredients = (dish: TypeDish) => {
     display: flex;
     align-items: center;
     gap: 1.5rem;
+    margin-bottom: 3rem;
+  }
+
+  &__filters {
     margin-bottom: 3rem;
   }
 
